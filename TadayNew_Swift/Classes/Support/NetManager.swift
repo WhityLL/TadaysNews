@@ -16,6 +16,9 @@ protocol NetManagerProtocol {
     // MARK: 首页顶部新闻标题的数据
     static func loadHomeNewsTitleData(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ())
 
+    // MARK: 点击首页加号按钮，获取频道推荐数据
+    static func loadHomeCategoryRecommend(completionHandler:@escaping (_ titles: [HomeNewsTitleModel]) -> ())
+    
     // MARK: 获取首页、视频、小视频的新闻列表数据,加载更多
     static func loadApiNewsFeeds(apiFrom: APIFrom, category: NewsTitleCategory, ttFrom: TTFrom, maxBehotTime: TimeInterval, listCount: Int, _ completionHandler: @escaping (_ news: [NewsModel]) -> ())
 
@@ -62,6 +65,26 @@ extension NetManagerProtocol {
         }
     }
 
+    // MARK: 点击首页加号按钮，获取频道推荐数据
+    static func loadHomeCategoryRecommend(completionHandler:@escaping (_ titles: [HomeNewsTitleModel]) -> ()){
+        let url = BASE_URL + "/article/category/get_extra/v1/?"
+        let params = ["device_id": device_id,
+                      "iid": iid,
+                      "device_platform": device_platform,
+                      "aid":aid,
+                      "ab_feature": ab_feature] as [String : Any]
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            guard response.result.isSuccess else { return }
+            if let value = response.result.value {
+                print("JSON: \(value)")
+                if let obj = BaseCommonNaviTitleModel.deserialize(from: value as? Dictionary){
+                    guard obj.message == "success" else { return }
+                    let titles = obj.data.data
+                    completionHandler(titles)
+                }
+            }
+        }
+    }
     
     /// 获取首页、西瓜视频（除直播外）、小视频（推荐、游戏列表）新闻列表数据
     /// - parameter category: 新闻类别

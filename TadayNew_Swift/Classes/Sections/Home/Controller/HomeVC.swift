@@ -142,8 +142,6 @@ extension HomeVC {
         
         vc.userSectectedTitles = channelTitleModels
         
-        vc.categories = channelTitleModels
-        
         present(vc, animated: true, completion: nil)
         
     }

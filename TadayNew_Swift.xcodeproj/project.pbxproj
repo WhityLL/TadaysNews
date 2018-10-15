@@ -1112,7 +1112,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DVUR6TRNKM;
+				DEVELOPMENT_TEAM = 8659WHUNXW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TadayNew_Swift/Classes/Venders/Frameworks",
@@ -1164,7 +1164,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DVUR6TRNKM;
+				DEVELOPMENT_TEAM = 8659WHUNXW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TadayNew_Swift/Classes/Venders/Frameworks",

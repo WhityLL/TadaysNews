@@ -63,7 +63,6 @@ class ZL_NaviBarView_Video: UIView {
             configuration.titleSelectedColor = ZLGlobalRedColor()
             configuration.titleFont = AdaptedCustomBlodFont(size: 14)
             configuration.titleTextZoom = true
-            configuration.titleTextZoomAdditionalPointSize = 1.0
             configuration.indicatorColor = .clear
             configuration.needBounces = false
             configuration.showBottomSeparator = false

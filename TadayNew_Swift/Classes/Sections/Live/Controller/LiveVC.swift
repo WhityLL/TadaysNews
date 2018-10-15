@@ -73,6 +73,7 @@ extension LiveVC {
             configuration.titleSelectedColor = ZLGlobalRedColor()
             configuration.bottomSeparatorColor = ZLSeperateColor()
             configuration.indicatorColor = .clear
+            configuration.showIndicator = false
             configuration.titleTextZoom = true
             self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.pageViewH), delegate: self , titleNames: titleNames.mutableCopy() as? [Any], configure: configuration)
             self.pageTitleView!.backgroundColor = .white

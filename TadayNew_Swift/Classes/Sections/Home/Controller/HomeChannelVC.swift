@@ -50,11 +50,11 @@ class HomeChannelVC: BaseViewController {
         flowLayout.minimumInteritemSpacing = 10
         
         let collectionView: UICollectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: headerView.bottom, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - headerView.bottom), collectionViewLayout: flowLayout)
+        collectionView.backgroundColor = ZLBgColor()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
-        collectionView.allowsMultipleSelection = true // 允许用户多选
-        collectionView.addGestureRecognizer(longPressRecognizer)
+        
         
         collectionView.register(UINib.init(nibName: "UserChannelCell", bundle: nil), forCellWithReuseIdentifier:identify_UserSelectedCell)
         collectionView.register(UINib.init(nibName: "ChannelRecomendCell", bundle: nil), forCellWithReuseIdentifier:identify_ChannelRecomendCell)
@@ -69,48 +69,24 @@ class HomeChannelVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
+
+        // 点击首页加号按钮，获取频道推荐数据
+        NetManager.loadHomeCategoryRecommend { recommendTitles in
+            self.categories.append(contentsOf: recommendTitles)
+            self.collectionView.reloadData()
+        }
         
-        collectionView.reloadData()
-        
+        collectionView.allowsMultipleSelection = true // 允许用户多选
+        longPressRecognizer.minimumPressDuration = 0.5; //时间长短
+        collectionView.addGestureRecognizer(longPressRecognizer)
     }
     
     @objc func btn_closeClick() {
         dismiss(animated: true, completion: nil)
     }
 
-    /// 长按手势
+    /// 长按移动手势
     private lazy var longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressTarget))
-    
-    @objc private func longPressTarget(longPress: UILongPressGestureRecognizer) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "longPressTarget"), object: nil)
-        // 选中的 点
-        let selectedPoint = longPress.location(in: collectionView)
-        // 转换成索引
-        if let selectedIndexPath = collectionView.indexPathForItem(at: selectedPoint) {
-            switch longPress.state {
-            case .began:
-                if isEdit && selectedIndexPath.section == 0 { // 选中的是上部的 cell,并且是可编辑状态
-                    collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
-                } else {
-                    isEdit = true
-                    collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
-                }
-            case .changed:
-                // 固定第一、二个不能移动
-                if selectedIndexPath.item <= 1 { collectionView.endInteractiveMovement(); break }
-                collectionView.updateInteractiveMovementTargetPosition(longPress.location(in: longPressRecognizer.view))
-            case .ended:
-                collectionView.endInteractiveMovement()
-            default:
-                collectionView.cancelInteractiveMovement()
-            }
-        } else {
-            // 判断点是否在 collectionView 上
-            if selectedPoint.x < collectionView.bounds.minX || selectedPoint.x > collectionView.bounds.maxX || selectedPoint.y < collectionView.bounds.minY || selectedPoint.y > collectionView.bounds.maxY  {
-                collectionView.endInteractiveMovement()
-            }
-        }
-    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -126,10 +102,8 @@ extension HomeChannelVC: UICollectionViewDelegate, UICollectionViewDataSource, U
             let userSelectedHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: identify_UserSelectedChannelHeaderView, for: indexPath) as! UserSelectedChannelHeaderView
             
             userSelectedHeaderView.editBtnClickClosure = { (sender: UIButton) in
-                
                 self.isEdit = sender.isSelected
                 if !sender.isSelected { collectionView.endInteractiveMovement() }
-                
             }
             
             return userSelectedHeaderView
@@ -195,11 +169,12 @@ extension HomeChannelVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     /// 移动 cell
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // 固定第一、二个不能移动
-        if destinationIndexPath.item <= 1 {
+        if (destinationIndexPath.item <= 1 && destinationIndexPath.section == 0) {
             collectionView.endInteractiveMovement()
             collectionView.reloadData()
             return
         }
+
         // 取出需要移动的 cell
         let title = userSectectedTitles[sourceIndexPath.item]
         userSectectedTitles.remove(at: sourceIndexPath.item)
@@ -238,3 +213,57 @@ extension HomeChannelVC: UserSelctedChannelCellDelegate {
         
     }
 }
+
+extension HomeChannelVC {
+    @objc private func longPressTarget(longPress: UILongPressGestureRecognizer) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "longPressTarget"), object: nil)
+        // 选中的 点
+        let selectedPoint = longPress.location(in: collectionView)
+        // 转换成索引
+        if let selectedIndexPath = collectionView.indexPathForItem(at: selectedPoint) {
+            
+            if (!isEdit) {
+                isEdit = true
+            }
+            
+            switch longPress.state {
+            case .began:
+                // 不要移动第一个 和只移动第一个section
+                if selectedIndexPath.item == 0 || selectedIndexPath.item == 1 || selectedIndexPath.section != 0 { return }
+                
+                let cell = collectionView.cellForItem(at: selectedIndexPath)
+                cell?.transform = CGAffineTransform.init(scaleX: 1.1, y: 1.1)
+                collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+                
+            case .changed:
+//                // 固定第一、二个不能移动
+//                if (selectedIndexPath.item <= 1 && selectedIndexPath.section == 0) { collectionView.cancelInteractiveMovement(); break }
+                collectionView.updateInteractiveMovementTargetPosition(longPress.location(in: longPressRecognizer.view))
+                
+            case .ended:
+                collectionView.endInteractiveMovement()
+            default:
+                collectionView.cancelInteractiveMovement()
+            }
+        }
+//        else {
+//            // 判断点是否在 collectionView 上
+//            if selectedPoint.x < collectionView.bounds.minX || selectedPoint.x > collectionView.bounds.maxX || selectedPoint.y < collectionView.bounds.minY || selectedPoint.y > collectionView.bounds.maxY  {
+//                collectionView.endInteractiveMovement()
+//            }
+//        }
+    }
+    
+    // 截图
+    func getTheCellSnap(targetView: UIView) -> UIImageView {
+        UIGraphicsBeginImageContextWithOptions(targetView.bounds.size, false, 0.0)
+        
+        targetView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let gottenImageView = UIImageView(image: image)
+        
+        return gottenImageView
+    }
+}
+
