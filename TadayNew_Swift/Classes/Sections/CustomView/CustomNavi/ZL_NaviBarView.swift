@@ -66,7 +66,7 @@ extension ZL_NaviBarView {
         addSubview(searchBtn)
         addSubview(cameraBtn)
 
-//        searchBtn.frame = CGRect.init(x: 5, y: 5, width: SCREEN_WIDTH - 60, height: 34)
+//        searchBtn.frame = CGRect.init(x: 5, y: 5, width: SCREEN_WIDTH - 60, height: 38)
 //        cameraBtn.frame = CGRect.init(x: searchBtn.frame.maxX + 5, y: 7, width: 30, height: 30)
         
         cameraBtn.snp.makeConstraints { (make) in
@@ -77,7 +77,7 @@ extension ZL_NaviBarView {
         }
 
         searchBtn.snp.makeConstraints { (make) in
-            make.height.equalTo(34)
+            make.height.equalTo(38)
             make.left.equalTo(self.snp.left).offset(5)
             make.centerY.equalTo(self)
             make.right.equalTo(cameraBtn.snp.left).offset(-10)

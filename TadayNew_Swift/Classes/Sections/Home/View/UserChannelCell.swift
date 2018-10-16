@@ -29,11 +29,21 @@ class UserChannelCell: UICollectionViewCell {
         
     }
     
+    // 编辑状态
     var isEdit = false {
         didSet {
-            btn_delete.isHidden = !isEdit
-            if btn_title.titleLabel!.text! == "推荐" || btn_title.titleLabel!.text! == "热点" {
-                btn_delete.isHidden = true
+            btn_delete.isHidden = !isEdit || isFixed
+        }
+    }
+    
+    // 固定 不可编辑
+    var isFixed = false {
+        didSet {
+            btn_delete.isHidden = !isEdit || isFixed
+            if (isFixed) {
+                btn_title.setTitleColor(ZLGrayTextColor(), for: .normal)
+            }else{
+                btn_title.setTitleColor(ZLBlackTextColor(), for: .normal)
             }
         }
     }

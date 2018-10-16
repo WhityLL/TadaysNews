@@ -52,17 +52,11 @@ class UserSelectedChannelHeaderView: UICollectionReusableView {
         super.init(frame: frame)
         
         setupSubView()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(longPressTarget), name: NSNotification.Name(rawValue: "longPressTarget"), object: nil)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc private func longPressTarget() {
-        btn_edit.isSelected = true
-        lb_desc.text = "拖拽可以排序"
     }
     
     func setupSubView() {
@@ -84,8 +78,16 @@ class UserSelectedChannelHeaderView: UICollectionReusableView {
     
     @objc func btn_editClick(sender : UIButton) {
         sender.isSelected = !sender.isSelected
+        isEdit = sender.isSelected
         lb_desc.text = sender.isSelected ? "拖拽可以排序" : "点击进入频道"
         editBtnClickClosure?(sender)
     }
     
+    
+    var isEdit = false {
+        didSet {
+            btn_edit.isSelected = isEdit
+            lb_desc.text = isEdit ? "拖拽可以排序" : "点击进入频道"
+        }
+    }
 }
