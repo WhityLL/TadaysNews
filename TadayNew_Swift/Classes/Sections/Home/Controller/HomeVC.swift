@@ -138,11 +138,13 @@ extension HomeVC {
     
     @objc private func addChannelButtonClick(){
         
-        let vc = HomeChannelVC()
+//        let vc = HomeChannelVC()
+//        vc.userSectectedTitles = channelTitleModels
+//        present(vc, animated: true, completion: nil)
         
+        let vc = HomeChannelPOPVC()
         vc.userSectectedTitles = channelTitleModels
-        
-        present(vc, animated: true, completion: nil)
+        vc.show()
         
     }
 }

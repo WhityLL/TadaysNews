@@ -85,6 +85,7 @@
 		8F817B86217323CB003D444A /* ChannelRecomendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F817B84217323CB003D444A /* ChannelRecomendCell.xib */; };
 		8F817B8D21732AB4003D444A /* RecommendChannelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F817B8B21732AB4003D444A /* RecommendChannelHeaderView.swift */; };
 		8F817B9121732ACD003D444A /* UserSelectedChannelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F817B8F21732ACD003D444A /* UserSelectedChannelHeaderView.swift */; };
+		8F8B7152217639540093356D /* HomeChannelPOPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8B7151217639540093356D /* HomeChannelPOPVC.swift */; };
 		8FCD7A22217046DE00966DE6 /* IJKLiveVC_Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD7A21217046DE00966DE6 /* IJKLiveVC_Show.swift */; };
 		8FCD7A252170470400966DE6 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCD7A242170470400966DE6 /* IJKMediaFramework.framework */; };
 		8FCD7A2721704FB300966DE6 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCD7A2621704FB300966DE6 /* VideoToolbox.framework */; };
@@ -192,6 +193,7 @@
 		8F817B84217323CB003D444A /* ChannelRecomendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelRecomendCell.xib; sourceTree = "<group>"; };
 		8F817B8B21732AB4003D444A /* RecommendChannelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendChannelHeaderView.swift; sourceTree = "<group>"; };
 		8F817B8F21732ACD003D444A /* UserSelectedChannelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectedChannelHeaderView.swift; sourceTree = "<group>"; };
+		8F8B7151217639540093356D /* HomeChannelPOPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChannelPOPVC.swift; sourceTree = "<group>"; };
 		8FCD7A21217046DE00966DE6 /* IJKLiveVC_Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJKLiveVC_Show.swift; sourceTree = "<group>"; };
 		8FCD7A242170470400966DE6 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		8FCD7A2621704FB300966DE6 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -651,6 +653,7 @@
 			children = (
 				8F6D6868216B50EC007CFC0C /* HomeVC.swift */,
 				8F817B7921725896003D444A /* HomeChannelVC.swift */,
+				8F8B7151217639540093356D /* HomeChannelPOPVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				8F4D1948216F34FC0087DA3A /* LiveModel.swift in Sources */,
 				8F6D6882216B694B007CFC0C /* ZLSettingCell.swift in Sources */,
 				8F4E16E3216DE1640023E6A0 /* VideoVC_VideoNearbyVC.swift in Sources */,
+				8F8B7152217639540093356D /* HomeChannelPOPVC.swift in Sources */,
 				8FCD7A3F21707ED700966DE6 /* IJKLive_Show_Navi.swift in Sources */,
 				8F817B7A21725896003D444A /* HomeChannelVC.swift in Sources */,
 				8F4E16EA216DF9A30023E6A0 /* UserDetail.swift in Sources */,

@@ -27,8 +27,6 @@ class HomeChannelVC: BaseViewController {
     let identify_UserSelectedChannelHeaderView = "UserSelectedChannelHeaderView"
     let identify_RecommendChannelHeaderView = "RecommendChannelHeaderView"
     
-    var dragIndexPath: NSIndexPath? = nil
-    
     private lazy var headerView: UIView = {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: kStatusBarHeight, width: SCREEN_WIDTH, height: 40))
         headerView.backgroundColor = .white
@@ -207,42 +205,6 @@ extension HomeChannelVC: UserSelctedChannelCellDelegate {
 }
 
 extension HomeChannelVC {
-    
-    func getDragingIndexPathWithPoint(point: CGPoint) -> NSIndexPath? {
-        //最后剩一个怎不可以排序
-        if collectionView.numberOfItems(inSection: 0) == 1 {
-            return dragIndexPath
-        }else{
-            for indexPath in collectionView.indexPathsForVisibleItems {
-                //下半部分不需要排序
-                if (indexPath.section > 0) {continue}
-                //在上半部分中找出相对应的Item
-                if collectionView.cellForItem(at: indexPath)!.frame.contains(point) {
-                    if (indexPath.row != 0) {
-                        dragIndexPath = indexPath as NSIndexPath;
-                    }
-                    break;
-                }
-            }
-        }
-        return dragIndexPath;
-    }
-    
-    func gettargetIndexPathWithPoint(point: CGPoint) -> NSIndexPath? {
-        var targetIndexPath: NSIndexPath? = nil
-        for indexPath in collectionView.indexPathsForVisibleItems {
-            //如果是自己不需要排序
-            if (indexPath as NSIndexPath) == dragIndexPath  {continue}
-            //在上半部分中找出相对应的Item
-            if collectionView.cellForItem(at: indexPath)!.frame.contains(point) {
-                if (indexPath.row != 0) {
-                    targetIndexPath = indexPath as NSIndexPath;
-                }
-                break;
-            }
-        }
-        return targetIndexPath;
-    }
     
     @objc private func longPressTarget(longPress: UILongPressGestureRecognizer) {
 
