@@ -202,8 +202,10 @@ enum WendaEnterFrom: String {
 
 /// 从哪里进入头条
 enum TTFrom: String {
+    case refresh = "refresh"
     case pull = "pull"
     case loadMore = "load_more"
+    case loadmore = "loadmore"   //小视频活动，字符串小写
     case auto = "auto"
     case enterAuto = "enter_auto"
     case preLoadMoreDraw = "pre_load_more_draw"

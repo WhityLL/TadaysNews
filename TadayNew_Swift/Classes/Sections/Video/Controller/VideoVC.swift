@@ -56,7 +56,7 @@ extension VideoVC {
                     vc.categary = .ugcVideoLocal
                     vcs.add(vc)
                 case .ugcVideoActivity:    //活动
-                    let vc = UIViewController()
+                    let vc = Video_ActivityListVC()
                     vcs.add(vc)
                 case .smallgameSmallvideo:  //游戏
                     let vc = VideoVC_VideoListVC()

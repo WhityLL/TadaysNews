@@ -26,7 +26,7 @@ class UserChannelCell: UICollectionViewCell {
         
         btn_title.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         btn_title.setTitleColor(ZLBlackTextColor(), for: .normal)
-        
+        btn_title.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     // 编辑状态

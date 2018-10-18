@@ -39,12 +39,22 @@ class HomeChannelView: UIView {
         headerView.backgroundColor = .white
         addSubview(headerView)
         
+        headerView.addSubview(headerSepLine)
+        headerSepLine.frame = CGRect.init(x: 0, y: 39, width: SCREEN_WIDTH, height: 1)
+        headerSepLine.isHidden = true
+        
         let btn_close: UIButton = UIButton.init(type: .custom)
         headerView.addSubview(btn_close)
         btn_close.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40)
         btn_close.setImage(UIImage.init(named: "small_video_close_night"), for: .normal)
         btn_close.addTarget(self, action: #selector(btn_closeClick), for: .touchUpInside)
         return headerView
+    }()
+    
+    private var headerSepLine: UIView = {
+        let headerSepLine = UIView()
+        headerSepLine.backgroundColor = ZLSeperateColor()
+        return headerSepLine
     }()
     
     private lazy var collectionView: UICollectionView = {
@@ -89,17 +99,16 @@ class HomeChannelView: UIView {
         
         longPressRecognizer.minimumPressDuration = 0.3; //时间长短
         collectionView.addGestureRecognizer(longPressRecognizer)
+        
+        collectionView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
     @objc func btn_closeClick() {
-        
         channelPopViewCloseClosure?()
-        
     }
     
 }
@@ -260,5 +269,21 @@ extension HomeChannelView {
         }
     }
     
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize" {
+            let offsetY = collectionView.contentOffset.y
+            headerSepLine.isHidden = offsetY > 0 ? false : true
+            
+            if offsetY < 0 {
+                var iFrame = self.frame
+                iFrame.size.height = SCREEN_HEIGHT - kStatusBarHeight - abs(offsetY)
+                self.frame = iFrame
+                
+            }else{
+                
+            }
+            
+        }
+    }
 }
 

@@ -33,6 +33,9 @@ protocol NetManagerProtocol {
     // MARK: 小视频导航栏标题的数据
     static func loadSmallVideoCategories(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ())
 
+    // MARK: 小视频活动列表数据
+    static func loadVideoActivityData(ttFrom: TTFrom, listCount: Int, _ completionHandler: @escaping (_ activityModel: VideoActivityModel) -> ())
+    
 }
 
 extension NetManagerProtocol {
@@ -253,6 +256,37 @@ extension NetManagerProtocol {
                     guard obj.message == "success" else { return }
                     let titles = obj.data.data
                     completionHandler(titles)
+                }
+            }
+        }
+    }
+    
+    
+    /// 小视频（活动）
+    ///
+    /// - Parameter completionHandler:
+    static func loadVideoActivityData(ttFrom: TTFrom, listCount: Int, _ completionHandler: @escaping (_ activityModel: VideoActivityModel) -> ()){
+        
+        let url = BASE_URL + "/ugc/video/activity/channel/v1/?"
+        let params = ["version_code": version_code,
+                      "device_platform": device_platform,
+                      "aid":aid,
+                      "off_set":listCount,
+                      "device_id": device_id,
+                      "count": 10,
+                      "user_action": ttFrom,
+                      "ts": NSString.init(format: "%.0f", Date().timeIntervalSince1970),
+                      "iid": iid] as [String: Any]
+        
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { return }
+            if let value = response.result.value {
+                print("JSON: \(value)")
+                
+                if let obj = VideoActivityBaseModel.deserialize(from: value as? Dictionary){
+                    guard obj.message == "success" else { return }
+                    completionHandler(obj.data)
                 }
             }
         }

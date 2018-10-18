@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F12B1FD21788D090097BC9D /* Video_Activity_MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12B1FC21788D090097BC9D /* Video_Activity_MoreVC.swift */; };
+		8F12B1FF217890580097BC9D /* ZL_EdgeInsetsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12B1FE217890580097BC9D /* ZL_EdgeInsetsLabel.swift */; };
+		8F15DC872177430400C80468 /* Video_ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15DC862177430400C80468 /* Video_ActivityListVC.swift */; };
+		8F15DC892177471900C80468 /* VideoActivityBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15DC882177471900C80468 /* VideoActivityBaseModel.swift */; };
+		8F15DC8C21782E7F00C80468 /* Video_ActivityList_HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15DC8A21782E7F00C80468 /* Video_ActivityList_HeaderView.swift */; };
+		8F15DC8D21782E7F00C80468 /* Video_ActivityList_HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F15DC8B21782E7F00C80468 /* Video_ActivityList_HeaderView.xib */; };
+		8F15DC90217836DC00C80468 /* Video_ActivityList_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15DC8E217836DC00C80468 /* Video_ActivityList_Cell.swift */; };
+		8F15DC91217836DC00C80468 /* Video_ActivityList_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F15DC8F217836DC00C80468 /* Video_ActivityList_Cell.xib */; };
 		8F4D193E216E5A540087DA3A /* LiveVC_VideoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4D193D216E5A540087DA3A /* LiveVC_VideoListVC.swift */; };
 		8F4D1941216E5EF10087DA3A /* Live_VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4D193F216E5EF10087DA3A /* Live_VideoCell.swift */; };
 		8F4D1942216E5EF10087DA3A /* Live_VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D1940216E5EF10087DA3A /* Live_VideoCell.xib */; };
@@ -108,6 +116,14 @@
 /* Begin PBXFileReference section */
 		5BFCD50C6CBF7B898A055457 /* Pods_TadayNew_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TadayNew_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3F3C76F4AB8B687E210107 /* Pods-TadayNew_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TadayNew_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift.release.xcconfig"; sourceTree = "<group>"; };
+		8F12B1FC21788D090097BC9D /* Video_Activity_MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_Activity_MoreVC.swift; sourceTree = "<group>"; };
+		8F12B1FE217890580097BC9D /* ZL_EdgeInsetsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZL_EdgeInsetsLabel.swift; sourceTree = "<group>"; };
+		8F15DC862177430400C80468 /* Video_ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_ActivityListVC.swift; sourceTree = "<group>"; };
+		8F15DC882177471900C80468 /* VideoActivityBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoActivityBaseModel.swift; sourceTree = "<group>"; };
+		8F15DC8A21782E7F00C80468 /* Video_ActivityList_HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_ActivityList_HeaderView.swift; sourceTree = "<group>"; };
+		8F15DC8B21782E7F00C80468 /* Video_ActivityList_HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Video_ActivityList_HeaderView.xib; sourceTree = "<group>"; };
+		8F15DC8E217836DC00C80468 /* Video_ActivityList_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_ActivityList_Cell.swift; sourceTree = "<group>"; };
+		8F15DC8F217836DC00C80468 /* Video_ActivityList_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Video_ActivityList_Cell.xib; sourceTree = "<group>"; };
 		8F4D193D216E5A540087DA3A /* LiveVC_VideoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVC_VideoListVC.swift; sourceTree = "<group>"; };
 		8F4D193F216E5EF10087DA3A /* Live_VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live_VideoCell.swift; sourceTree = "<group>"; };
 		8F4D1940216E5EF10087DA3A /* Live_VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Live_VideoCell.xib; sourceTree = "<group>"; };
@@ -460,6 +476,7 @@
 		8F6D6847216B4E92007CFC0C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8F12B1FE217890580097BC9D /* ZL_EdgeInsetsLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -614,6 +631,8 @@
 				8F6D686E216B5117007CFC0C /* VideoVC.swift */,
 				8F4E16E0216DE0E50023E6A0 /* VideoVC_VideoListVC.swift */,
 				8F4E16E2216DE1640023E6A0 /* VideoVC_VideoNearbyVC.swift */,
+				8F15DC862177430400C80468 /* Video_ActivityListVC.swift */,
+				8F12B1FC21788D090097BC9D /* Video_Activity_MoreVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -622,6 +641,7 @@
 			isa = PBXGroup;
 			children = (
 				8F4E16EC216DFA7F0023E6A0 /* Video.swift */,
+				8F15DC882177471900C80468 /* VideoActivityBaseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -634,6 +654,10 @@
 				8F4D1949216F6DA40087DA3A /* VideoVC_VideoNearbyCell.swift */,
 				8F4D194A216F6DA40087DA3A /* VideoVC_VideoNearbyCell.xib */,
 				8F4D194F216F6DED0087DA3A /* VideoVC_VideoNearbyVC_HeaderView.swift */,
+				8F15DC8E217836DC00C80468 /* Video_ActivityList_Cell.swift */,
+				8F15DC8F217836DC00C80468 /* Video_ActivityList_Cell.xib */,
+				8F15DC8A21782E7F00C80468 /* Video_ActivityList_HeaderView.swift */,
+				8F15DC8B21782E7F00C80468 /* Video_ActivityList_HeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -815,9 +839,11 @@
 				8F6D688D216B6A98007CFC0C /* YMSettingPlist.plist in Resources */,
 				8F6D6817216B469C007CFC0C /* Main.storyboard in Resources */,
 				8F6D688F216B93A7007CFC0C /* Assets.xcassets in Resources */,
+				8F15DC91217836DC00C80468 /* Video_ActivityList_Cell.xib in Resources */,
 				8F4E16FE216E42510023E6A0 /* Video_VideoCell.xib in Resources */,
 				8F4E16FA216E0C590023E6A0 /* emojis.plist in Resources */,
 				8F4E16F9216E0C590023E6A0 /* emoji_mapping.plist in Resources */,
+				8F15DC8D21782E7F00C80468 /* Video_ActivityList_HeaderView.xib in Resources */,
 				8F4E16F8216E0C590023E6A0 /* emoji_sort.plist in Resources */,
 				8F4D194C216F6DA40087DA3A /* VideoVC_VideoNearbyCell.xib in Resources */,
 				8F817B86217323CB003D444A /* ChannelRecomendCell.xib in Resources */,
@@ -842,6 +868,8 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SGPagingView/SGPagingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -857,6 +885,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGPagingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -896,11 +926,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F15DC8C21782E7F00C80468 /* Video_ActivityList_HeaderView.swift in Sources */,
 				8F4E16F3216DFB500023E6A0 /* Emoji.swift in Sources */,
 				8F6D683F216B4C8C007CFC0C /* UIView+Extension.swift in Sources */,
 				8F6D6873216B573B007CFC0C /* ZLCustomMarco.swift in Sources */,
 				8F6D6840216B4C8C007CFC0C /* NSString+Extension.swift in Sources */,
 				8F6D6884216B694B007CFC0C /* ProfileHeaderBottomView.swift in Sources */,
+				8F15DC872177430400C80468 /* Video_ActivityListVC.swift in Sources */,
 				8F4E16F1216DFB1A0023E6A0 /* MyCellModel.swift in Sources */,
 				8F6D6886216B694B007CFC0C /* ZLSettingModel.swift in Sources */,
 				8F4D194B216F6DA40087DA3A /* VideoVC_VideoNearbyCell.swift in Sources */,
@@ -909,6 +941,7 @@
 				8F6D6887216B694B007CFC0C /* ProfileVC.swift in Sources */,
 				8F6D684B216B4EBF007CFC0C /* ZL_TabBarVC.swift in Sources */,
 				8F6D686B216B50FE007CFC0C /* LiveVC.swift in Sources */,
+				8F15DC892177471900C80468 /* VideoActivityBaseModel.swift in Sources */,
 				8F817B7821724B63003D444A /* IJKLive_Show_UserInfoView.swift in Sources */,
 				8F6D6846216B4C8C007CFC0C /* DeviceMacro.swift in Sources */,
 				8F4D1950216F6DED0087DA3A /* VideoVC_VideoNearbyVC_HeaderView.swift in Sources */,
@@ -925,6 +958,7 @@
 				8F6D683D216B4C8C007CFC0C /* UIImageView+Extension.swift in Sources */,
 				8F817B9121732ACD003D444A /* UserSelectedChannelHeaderView.swift in Sources */,
 				8F4E16C6216CF1FC0023E6A0 /* UIViewController+CameraExtension.swift in Sources */,
+				8F12B1FD21788D090097BC9D /* Video_Activity_MoreVC.swift in Sources */,
 				8F7DF6AA216C7C4B0042D2A9 /* SVProgressHUD+Extension.swift in Sources */,
 				8F4E16DD216DAF1C0023E6A0 /* CollectOrHistoryBaseVC.swift in Sources */,
 				8F4E16D1216D94480023E6A0 /* YBRectConst.m in Sources */,
@@ -936,6 +970,7 @@
 				8F7DF6AC216C818A0042D2A9 /* ZL_NaviBarView_Video.swift in Sources */,
 				8F6D684D216B4EF3007CFC0C /* ZL_NaviVC.swift in Sources */,
 				8F6D683E216B4C8C007CFC0C /* Initialization.swift in Sources */,
+				8F15DC90217836DC00C80468 /* Video_ActivityList_Cell.swift in Sources */,
 				8F6D6869216B50EC007CFC0C /* HomeVC.swift in Sources */,
 				8F6D6841216B4C8C007CFC0C /* UIButton+Extention.swift in Sources */,
 				8FCD7A3D2170723C00966DE6 /* IJKLiveBaseVC.swift in Sources */,
@@ -958,6 +993,7 @@
 				8FCD7A3B217070A300966DE6 /* IJKLiveVC_Room.swift in Sources */,
 				8F6D6842216B4C8C007CFC0C /* UIImage+Extendion.swift in Sources */,
 				8F4E16E7216DF8840023E6A0 /* Calculate.swift in Sources */,
+				8F12B1FF217890580097BC9D /* ZL_EdgeInsetsLabel.swift in Sources */,
 				8FCD7A22217046DE00966DE6 /* IJKLiveVC_Show.swift in Sources */,
 				8F4D1948216F34FC0087DA3A /* LiveModel.swift in Sources */,
 				8F6D6882216B694B007CFC0C /* ZLSettingCell.swift in Sources */,

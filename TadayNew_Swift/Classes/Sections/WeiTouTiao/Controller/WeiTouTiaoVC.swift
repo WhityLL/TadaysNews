@@ -41,7 +41,6 @@ extension WeiTouTiaoVC {
     
     private func requestData() {
         
-        
     }
     
     ///导航栏按钮点击事件

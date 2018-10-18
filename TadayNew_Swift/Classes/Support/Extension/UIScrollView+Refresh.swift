@@ -38,6 +38,34 @@ extension UIScrollView {
         self.mj_header = zl_haader
     }
     
+    func addHeaderGifRefreshWithIgnoreHeight(refreshBlock: @escaping MJRefreshComponentRefreshingBlock) {
+        let zl_haader: ZL_RefreshHeader = ZL_RefreshHeader.init(refreshingBlock: refreshBlock)
+        zl_haader.ignoredScrollViewContentInsetTop = 150;
+        zl_haader.mj_h = 60
+        
+        
+        // 图片数组
+        var images = [UIImage]()
+        for index in 0..<16 {
+            let image = UIImage(named: "dropdown_loading_0\(index)")
+            images.append(image!)
+        }
+        
+        zl_haader.setImages(images, for: .idle)        // 设置空闲状态的图片
+        zl_haader.setImages(images, for: .refreshing)  // 设置刷新状态的图片
+        
+        zl_haader.setTitle("下拉推荐", for: .idle)
+        zl_haader.setTitle("松开推荐", for: .pulling)
+        zl_haader.setTitle("推荐中", for: .refreshing)
+        zl_haader.setTitle("", for: .willRefresh)
+        
+        /// 设置一些属性
+        zl_haader.isAutomaticallyChangeAlpha = true
+        zl_haader.lastUpdatedTimeLabel.isHidden = true
+        
+        self.mj_header = zl_haader
+    }
+    
     func addFooterGifRefresh(refreshBlock: @escaping MJRefreshComponentRefreshingBlock) {
         let zl_footer: ZL_RefreshFooter = ZL_RefreshFooter.init(refreshingBlock: refreshBlock)
         // 设置控件的高度
@@ -99,6 +127,8 @@ class ZL_RefreshHeader: MJRefreshGifHeader {
         stateLabel.font = UIFont.systemFont(ofSize: 10)
         stateLabel.frame = CGRect(x: 0, y: 35, width: mj_w, height: 25)
     }
+    
+    
 }
 
 // MARK: - ========= 自定义RefreshFooter ==========

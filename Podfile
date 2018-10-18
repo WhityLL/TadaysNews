@@ -18,6 +18,7 @@ target 'TadayNew_Swift' do
   pod 'SVProgressHUD'
   pod 'SGPagingView'
   pod 'FDFullscreenPopGesture'
+  pod 'SDCycleScrollView'
   
   pod 'RxSwift'
   

@@ -37,6 +37,8 @@ class HomeChannelPOPVC: UIViewController {
         super.viewDidLoad()
         fd_prefersNavigationBarHidden = true
         
+        view.alpha = 0
+        
         // init window
         setupWindow()
 
@@ -76,6 +78,7 @@ extension HomeChannelPOPVC {
         contentView.userSectectedTitles.append(contentsOf: userSectectedTitles)
         UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.contentView.frame = CGRect.init(x: 0, y: kStatusBarHeight, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - kStatusBarHeight)
+            self.view.alpha = 1
         }) { (completion: Bool) in
             
         }
@@ -85,7 +88,7 @@ extension HomeChannelPOPVC {
     
         UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.contentView.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - kStatusBarHeight)
-            
+            self.view.alpha = 0
         }) { (completion: Bool) in
             self.contentView.removeFromSuperview()
             self.cleanWindow()
