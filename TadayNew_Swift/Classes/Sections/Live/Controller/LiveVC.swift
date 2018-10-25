@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SGPagingView
 
 class LiveVC: BaseViewController {
 
@@ -75,14 +74,14 @@ extension LiveVC {
             configuration.indicatorColor = .clear
             configuration.showIndicator = false
             configuration.titleTextZoom = true
-            self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.pageViewH), delegate: self , titleNames: titleNames.mutableCopy() as? [Any], configure: configuration)
+            self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.pageViewH), delegate: self , titleNames: titleNames.mutableCopy() as! [String], configure: configuration)
             self.pageTitleView!.backgroundColor = .white
-            self.pageTitleView?.selectedIndex = 1
+            self.pageTitleView?.index = 1
             self.view.addSubview(self.pageTitleView!)
             
             // 内容视图
-            self.pageContentView = SGPageContentScrollView.init(frame: CGRect(x: 0, y: self.pageViewH, width: SCREEN_WIDTH, height: self.view.height - self.pageViewH), parentVC: self, childVCs: vcs as? [Any])
-            self.pageContentView!.delegatePageContentScrollView = self
+            self.pageContentView = SGPageContentScrollView.init(frame: CGRect(x: 0, y: self.pageViewH, width: SCREEN_WIDTH, height: self.view.height - self.pageViewH), parentVC: self, childVCs: vcs as! [UIViewController])
+            self.pageContentView!.delegateScrollView = self
             self.view.addSubview(self.pageContentView!)
         }
     }
@@ -103,12 +102,13 @@ extension LiveVC {
 // MARK: - SGPageTitleViewDelegate
 extension LiveVC : SGPageTitleViewDelegate,SGPageContentScrollViewDelegate{
     /// 联动 pageContent 的方法
-    func pageTitleView(_ pageTitleView: SGPageTitleView!, selectedIndex: Int) {
-        self.pageContentView!.setPageContentScrollViewCurrentIndex(selectedIndex)
+    func pageTitleView(pageTitleView: SGPageTitleView, index: Int) {
+        self.pageContentView!.setPageContentScrollView(index: index)
     }
     
     /// 联动 SGPageTitleView 的方法
-    func pageContentScrollView(_ pageContentScrollView: SGPageContentScrollView!, progress: CGFloat, originalIndex: Int, targetIndex: Int) {
-        self.pageTitleView!.setPageTitleViewWithProgress(progress, originalIndex: originalIndex, targetIndex: targetIndex)
+    func pageContentScrollView(pageContentScrollView: SGPageContentScrollView, progress: CGFloat, originalIndex: Int, targetIndex: Int) {
+        self.pageTitleView?.setPageTitleView(progress: progress, originalIndex: originalIndex, targetIndex: targetIndex)
     }
+
 }

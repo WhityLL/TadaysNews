@@ -5,7 +5,6 @@
 #ifndef TadayNew_Swift_Bridging_Header_h
 #define TadayNew_Swift_Bridging_Header_h
 
-#import "TestVC.h"
 #import "YBPopupMenu.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
 

@@ -10,8 +10,7 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
-  - SGPagingView (1.5.5)
-  - SnapKit (4.0.1)
+  - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.2.0)
 
@@ -23,7 +22,6 @@ DEPENDENCIES:
   - MJRefresh
   - RxSwift
   - SDCycleScrollView
-  - SGPagingView
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
@@ -38,7 +36,6 @@ SPEC REPOS:
     - RxSwift
     - SDCycleScrollView
     - SDWebImage
-    - SGPagingView
     - SnapKit
     - SVProgressHUD
     - SwiftyJSON
@@ -52,11 +49,10 @@ SPEC CHECKSUMS:
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  SGPagingView: 8054435c0149cf907ad3d515bc75e0ee9575216c
-  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 3dd3538cb8aa80036fd1dd5d42ed89131f6f0c90
+PODFILE CHECKSUM: bdcdb072d6ca91c8ff3f7f1268eb3204ce4fd18d
 
 COCOAPODS: 1.5.3

@@ -224,7 +224,14 @@ extension HomeChannelView: UserSelctedChannelCellDelegate {
         categories.insert(userSectectedTitles[indexPath!.item], at: 0)
         userSectectedTitles.remove(at: indexPath!.item)
         
-        collectionView.reloadData()
+        collectionView.deleteItems(at: [IndexPath(item: indexPath!.item, section: 0)])
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+             self.collectionView.insertItems(at: [IndexPath(item: 0, section: 1)])
+        }
+       
+        
+//        collectionView.reloadData()
     }
 }
 

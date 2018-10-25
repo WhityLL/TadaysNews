@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SGPagingView
 
 class VideoVC: BaseViewController {
 
@@ -69,8 +68,8 @@ extension VideoVC {
             }
             
             // 内容视图
-            self.pageContentView = SGPageContentScrollView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - kStatusBarAndNavigationBarHeight - kTabbarHeight), parentVC: self, childVCs: vcs as? [Any])
-            self.pageContentView!.delegatePageContentScrollView = self
+            self.pageContentView = SGPageContentScrollView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - kStatusBarAndNavigationBarHeight - kTabbarHeight), parentVC: self, childVCs: vcs as! [UIViewController])
+            self.pageContentView!.delegateScrollView = self
             self.view.addSubview(self.pageContentView!)
             
             // 设置导航栏数据数组
@@ -78,7 +77,7 @@ extension VideoVC {
             
             // 点击了 标题
             self.naviBar.pageTitleViewSelected = { [weak self] index in
-                self!.pageContentView!.setPageContentScrollViewCurrentIndex(index)
+                self!.pageContentView!.setPageContentScrollView(index: index)
             }
         }
     }
@@ -94,7 +93,7 @@ extension VideoVC {
 // MARK: - SGPageTitleViewDelegate
 extension VideoVC : SGPageContentScrollViewDelegate{
     /// 联动 SGPageTitleView 的方法
-    func pageContentScrollView(_ pageContentScrollView: SGPageContentScrollView!, progress: CGFloat, originalIndex: Int, targetIndex: Int) {
-        self.naviBar.pageTitleView?.setPageTitleViewWithProgress(progress, originalIndex: originalIndex, targetIndex: targetIndex)
+    func pageContentScrollView(pageContentScrollView: SGPageContentScrollView!, progress: CGFloat, originalIndex: Int, targetIndex: Int) {
+        self.naviBar.pageTitleView?.setPageTitleView(progress: progress, originalIndex: originalIndex, targetIndex: targetIndex)
     }
 }

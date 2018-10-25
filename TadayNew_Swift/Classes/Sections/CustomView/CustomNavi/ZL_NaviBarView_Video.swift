@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SGPagingView
 
 class ZL_NaviBarView_Video: UIView {
 
@@ -70,7 +69,7 @@ class ZL_NaviBarView_Video: UIView {
             
             pageTitleView = SGPageTitleView(frame: CGRect(x: -5, y: 0, width: pageView.width, height: pageView.height), delegate: self, titleNames: titleNames, configure: configuration)
             pageTitleView!.backgroundColor = .clear
-            pageTitleView!.selectedIndex = 1
+            pageTitleView!.index = 1
             
             pageView.addSubview(pageTitleView!)
         }
@@ -106,10 +105,8 @@ extension ZL_NaviBarView_Video {
 }
 
 extension ZL_NaviBarView_Video: SGPageTitleViewDelegate {
-    
     /// 联动 pageContent 的方法
-    func pageTitleView(_ pageTitleView: SGPageTitleView!, selectedIndex: Int) {
-        pageTitleViewSelected?(selectedIndex)
+    func pageTitleView(pageTitleView: SGPageTitleView, index: Int) {
+        pageTitleViewSelected?(index)
     }
-    
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F12B1FD21788D090097BC9D /* Video_Activity_MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12B1FC21788D090097BC9D /* Video_Activity_MoreVC.swift */; };
 		8F12B1FF217890580097BC9D /* ZL_EdgeInsetsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12B1FE217890580097BC9D /* ZL_EdgeInsetsLabel.swift */; };
 		8F15DC872177430400C80468 /* Video_ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15DC862177430400C80468 /* Video_ActivityListVC.swift */; };
 		8F15DC892177471900C80468 /* VideoActivityBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15DC882177471900C80468 /* VideoActivityBaseModel.swift */; };
@@ -68,7 +67,6 @@
 		8F6D686F216B5117007CFC0C /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D686E216B5117007CFC0C /* VideoVC.swift */; };
 		8F6D6871216B512C007CFC0C /* WeiTouTiaoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D6870216B512C007CFC0C /* WeiTouTiaoVC.swift */; };
 		8F6D6873216B573B007CFC0C /* ZLCustomMarco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D6872216B573B007CFC0C /* ZLCustomMarco.swift */; };
-		8F6D6877216B5FEC007CFC0C /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D6876216B5FEC007CFC0C /* TestVC.m */; };
 		8F6D6882216B694B007CFC0C /* ZLSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D6879216B694B007CFC0C /* ZLSettingCell.swift */; };
 		8F6D6883216B694B007CFC0C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D687A216B694B007CFC0C /* ProfileHeaderView.swift */; };
 		8F6D6884216B694B007CFC0C /* ProfileHeaderBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D687B216B694B007CFC0C /* ProfileHeaderBottomView.swift */; };
@@ -110,13 +108,23 @@
 		8FCD7A3D2170723C00966DE6 /* IJKLiveBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD7A3C2170723C00966DE6 /* IJKLiveBaseVC.swift */; };
 		8FCD7A3F21707ED700966DE6 /* IJKLive_Show_Navi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD7A3E21707ED700966DE6 /* IJKLive_Show_Navi.swift */; };
 		8FCD7A4121707EE700966DE6 /* IJKLive_Show_ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD7A4021707EE700966DE6 /* IJKLive_Show_ControlView.swift */; };
+		8FE1AEC921804B0400252D92 /* SGPageTitleViewConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEC421804B0400252D92 /* SGPageTitleViewConfigure.swift */; };
+		8FE1AECA21804B0400252D92 /* SGPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEC521804B0400252D92 /* SGPageTitleView.swift */; };
+		8FE1AECB21804B0400252D92 /* SGPageContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEC621804B0400252D92 /* SGPageContentCollectionView.swift */; };
+		8FE1AECC21804B0400252D92 /* SGPageViewPopGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEC721804B0400252D92 /* SGPageViewPopGestureVC.swift */; };
+		8FE1AECD21804B0400252D92 /* SGPageContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEC821804B0400252D92 /* SGPageContentScrollView.swift */; };
+		8FE1AED921805D3C00252D92 /* ZL_PagerListGestureTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AED821805D3C00252D92 /* ZL_PagerListGestureTableView.swift */; };
+		8FE1AEDB21805D5600252D92 /* ZL_PagerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEDA21805D5600252D92 /* ZL_PagerListController.swift */; };
+		8FE1AEDD21805D6F00252D92 /* ZL_PagerListMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEDC21805D6F00252D92 /* ZL_PagerListMainView.swift */; };
+		8FE1AEDF21805EC700252D92 /* ZL_PagerListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEDE21805EC700252D92 /* ZL_PagerListContentView.swift */; };
+		8FE1AEE1218063B400252D92 /* ZL_PagerListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEE0218063B400252D92 /* ZL_PagerListHeaderView.swift */; };
+		8FE1AEE3218065CD00252D92 /* Video_Activity_MoreVC_LeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1AEE2218065CD00252D92 /* Video_Activity_MoreVC_LeftView.swift */; };
 		AB84E570B2A00DD7CCCCD61D /* Pods_TadayNew_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFCD50C6CBF7B898A055457 /* Pods_TadayNew_Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5BFCD50C6CBF7B898A055457 /* Pods_TadayNew_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TadayNew_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3F3C76F4AB8B687E210107 /* Pods-TadayNew_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TadayNew_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift.release.xcconfig"; sourceTree = "<group>"; };
-		8F12B1FC21788D090097BC9D /* Video_Activity_MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_Activity_MoreVC.swift; sourceTree = "<group>"; };
 		8F12B1FE217890580097BC9D /* ZL_EdgeInsetsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZL_EdgeInsetsLabel.swift; sourceTree = "<group>"; };
 		8F15DC862177430400C80468 /* Video_ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_ActivityListVC.swift; sourceTree = "<group>"; };
 		8F15DC882177471900C80468 /* VideoActivityBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoActivityBaseModel.swift; sourceTree = "<group>"; };
@@ -183,8 +191,6 @@
 		8F6D6870216B512C007CFC0C /* WeiTouTiaoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiTouTiaoVC.swift; sourceTree = "<group>"; };
 		8F6D6872216B573B007CFC0C /* ZLCustomMarco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLCustomMarco.swift; sourceTree = "<group>"; };
 		8F6D6874216B5FEC007CFC0C /* TadayNew_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TadayNew_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		8F6D6875216B5FEC007CFC0C /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
-		8F6D6876216B5FEC007CFC0C /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 		8F6D6879216B694B007CFC0C /* ZLSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSettingCell.swift; sourceTree = "<group>"; };
 		8F6D687A216B694B007CFC0C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		8F6D687B216B694B007CFC0C /* ProfileHeaderBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderBottomView.swift; sourceTree = "<group>"; };
@@ -226,6 +232,17 @@
 		8FCD7A3C2170723C00966DE6 /* IJKLiveBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJKLiveBaseVC.swift; sourceTree = "<group>"; };
 		8FCD7A3E21707ED700966DE6 /* IJKLive_Show_Navi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJKLive_Show_Navi.swift; sourceTree = "<group>"; };
 		8FCD7A4021707EE700966DE6 /* IJKLive_Show_ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJKLive_Show_ControlView.swift; sourceTree = "<group>"; };
+		8FE1AEC421804B0400252D92 /* SGPageTitleViewConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageTitleViewConfigure.swift; sourceTree = "<group>"; };
+		8FE1AEC521804B0400252D92 /* SGPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageTitleView.swift; sourceTree = "<group>"; };
+		8FE1AEC621804B0400252D92 /* SGPageContentCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageContentCollectionView.swift; sourceTree = "<group>"; };
+		8FE1AEC721804B0400252D92 /* SGPageViewPopGestureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageViewPopGestureVC.swift; sourceTree = "<group>"; };
+		8FE1AEC821804B0400252D92 /* SGPageContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPageContentScrollView.swift; sourceTree = "<group>"; };
+		8FE1AED821805D3C00252D92 /* ZL_PagerListGestureTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZL_PagerListGestureTableView.swift; sourceTree = "<group>"; };
+		8FE1AEDA21805D5600252D92 /* ZL_PagerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZL_PagerListController.swift; sourceTree = "<group>"; };
+		8FE1AEDC21805D6F00252D92 /* ZL_PagerListMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZL_PagerListMainView.swift; sourceTree = "<group>"; };
+		8FE1AEDE21805EC700252D92 /* ZL_PagerListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZL_PagerListContentView.swift; sourceTree = "<group>"; };
+		8FE1AEE0218063B400252D92 /* ZL_PagerListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZL_PagerListHeaderView.swift; sourceTree = "<group>"; };
+		8FE1AEE2218065CD00252D92 /* Video_Activity_MoreVC_LeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_Activity_MoreVC_LeftView.swift; sourceTree = "<group>"; };
 		C22937B7A2132C94F0E8BCC8 /* Pods-TadayNew_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TadayNew_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -383,8 +400,6 @@
 				8F6D6824216B4C8C007CFC0C /* Venders */,
 				8F6D682C216B4C8C007CFC0C /* Support */,
 				8F6D683B216B4C8C007CFC0C /* Base */,
-				8F6D6875216B5FEC007CFC0C /* TestVC.h */,
-				8F6D6876216B5FEC007CFC0C /* TestVC.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -392,6 +407,7 @@
 		8F6D6824216B4C8C007CFC0C /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				8FE1AEC321804B0400252D92 /* SGPagingView-Swift */,
 				8FCD7A232170470400966DE6 /* Frameworks */,
 				8F4E16CA216D94480023E6A0 /* YBPopupMenu */,
 			);
@@ -618,6 +634,7 @@
 		8F6D6860216B50BD007CFC0C /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				8FE1AECE21805C9C00252D92 /* ZL_PageScrollView */,
 				8F6D6861216B50BD007CFC0C /* Controller */,
 				8F6D6862216B50BD007CFC0C /* Model */,
 				8F6D6863216B50BD007CFC0C /* View */,
@@ -632,7 +649,7 @@
 				8F4E16E0216DE0E50023E6A0 /* VideoVC_VideoListVC.swift */,
 				8F4E16E2216DE1640023E6A0 /* VideoVC_VideoNearbyVC.swift */,
 				8F15DC862177430400C80468 /* Video_ActivityListVC.swift */,
-				8F12B1FC21788D090097BC9D /* Video_Activity_MoreVC.swift */,
+				8FE1AEE2218065CD00252D92 /* Video_Activity_MoreVC_LeftView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -771,6 +788,30 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		8FE1AEC321804B0400252D92 /* SGPagingView-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				8FE1AEC421804B0400252D92 /* SGPageTitleViewConfigure.swift */,
+				8FE1AEC521804B0400252D92 /* SGPageTitleView.swift */,
+				8FE1AEC621804B0400252D92 /* SGPageContentCollectionView.swift */,
+				8FE1AEC721804B0400252D92 /* SGPageViewPopGestureVC.swift */,
+				8FE1AEC821804B0400252D92 /* SGPageContentScrollView.swift */,
+			);
+			path = "SGPagingView-Swift";
+			sourceTree = "<group>";
+		};
+		8FE1AECE21805C9C00252D92 /* ZL_PageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8FE1AEDA21805D5600252D92 /* ZL_PagerListController.swift */,
+				8FE1AEDC21805D6F00252D92 /* ZL_PagerListMainView.swift */,
+				8FE1AEDE21805EC700252D92 /* ZL_PagerListContentView.swift */,
+				8FE1AED821805D3C00252D92 /* ZL_PagerListGestureTableView.swift */,
+				8FE1AEE0218063B400252D92 /* ZL_PagerListHeaderView.swift */,
+			);
+			path = ZL_PageScrollView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -782,7 +823,7 @@
 				8F6D680A216B469C007CFC0C /* Sources */,
 				8F6D680B216B469C007CFC0C /* Frameworks */,
 				8F6D680C216B469C007CFC0C /* Resources */,
-				8FE597BF1592EF36A3780736 /* [CP] Embed Pods Frameworks */,
+				CEEB5B9A869F5FA24D75705C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -853,50 +894,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8FE597BF1592EF36A3780736 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SGPagingView/SGPagingView.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGPagingView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9F722E92F6E7A1A7F553F0FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -919,6 +916,48 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CEEB5B9A869F5FA24D75705C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -930,6 +969,7 @@
 				8F4E16F3216DFB500023E6A0 /* Emoji.swift in Sources */,
 				8F6D683F216B4C8C007CFC0C /* UIView+Extension.swift in Sources */,
 				8F6D6873216B573B007CFC0C /* ZLCustomMarco.swift in Sources */,
+				8FE1AEDF21805EC700252D92 /* ZL_PagerListContentView.swift in Sources */,
 				8F6D6840216B4C8C007CFC0C /* NSString+Extension.swift in Sources */,
 				8F6D6884216B694B007CFC0C /* ProfileHeaderBottomView.swift in Sources */,
 				8F15DC872177430400C80468 /* Video_ActivityListVC.swift in Sources */,
@@ -941,6 +981,7 @@
 				8F6D6887216B694B007CFC0C /* ProfileVC.swift in Sources */,
 				8F6D684B216B4EBF007CFC0C /* ZL_TabBarVC.swift in Sources */,
 				8F6D686B216B50FE007CFC0C /* LiveVC.swift in Sources */,
+				8FE1AECB21804B0400252D92 /* SGPageContentCollectionView.swift in Sources */,
 				8F15DC892177471900C80468 /* VideoActivityBaseModel.swift in Sources */,
 				8F817B7821724B63003D444A /* IJKLive_Show_UserInfoView.swift in Sources */,
 				8F6D6846216B4C8C007CFC0C /* DeviceMacro.swift in Sources */,
@@ -949,28 +990,32 @@
 				8F817B8D21732AB4003D444A /* RecommendChannelHeaderView.swift in Sources */,
 				8FCD7A4121707EE700966DE6 /* IJKLive_Show_ControlView.swift in Sources */,
 				8F4E16E5216DF7AA0023E6A0 /* NewsModel.swift in Sources */,
+				8FE1AED921805D3C00252D92 /* ZL_PagerListGestureTableView.swift in Sources */,
 				8F4E16E1216DE0E50023E6A0 /* VideoVC_VideoListVC.swift in Sources */,
+				8FE1AEDD21805D6F00252D92 /* ZL_PagerListMainView.swift in Sources */,
 				8F4E16D9216DA4670023E6A0 /* UserCareVC.swift in Sources */,
 				8F4D1944216F25810087DA3A /* CodableHelper.swift in Sources */,
+				8FE1AEE3218065CD00252D92 /* Video_Activity_MoreVC_LeftView.swift in Sources */,
 				8F4D193E216E5A540087DA3A /* LiveVC_VideoListVC.swift in Sources */,
 				8F4E16C1216CD63D0023E6A0 /* BaseCommonNaviTitleModel.swift in Sources */,
 				8F6D684F216B4F0E007CFC0C /* BaseViewController.swift in Sources */,
 				8F6D683D216B4C8C007CFC0C /* UIImageView+Extension.swift in Sources */,
 				8F817B9121732ACD003D444A /* UserSelectedChannelHeaderView.swift in Sources */,
 				8F4E16C6216CF1FC0023E6A0 /* UIViewController+CameraExtension.swift in Sources */,
-				8F12B1FD21788D090097BC9D /* Video_Activity_MoreVC.swift in Sources */,
+				8FE1AECD21804B0400252D92 /* SGPageContentScrollView.swift in Sources */,
 				8F7DF6AA216C7C4B0042D2A9 /* SVProgressHUD+Extension.swift in Sources */,
 				8F4E16DD216DAF1C0023E6A0 /* CollectOrHistoryBaseVC.swift in Sources */,
 				8F4E16D1216D94480023E6A0 /* YBRectConst.m in Sources */,
 				8F817B85217323CB003D444A /* ChannelRecomendCell.swift in Sources */,
 				8F4E16EF216DFAE50023E6A0 /* Foundation+Extension.swift in Sources */,
-				8F6D6877216B5FEC007CFC0C /* TestVC.m in Sources */,
 				8F7DF6B0216C88730042D2A9 /* NetManager.swift in Sources */,
 				8F6D6893216BBED1007CFC0C /* ZL_BaseWebVC.swift in Sources */,
 				8F7DF6AC216C818A0042D2A9 /* ZL_NaviBarView_Video.swift in Sources */,
 				8F6D684D216B4EF3007CFC0C /* ZL_NaviVC.swift in Sources */,
+				8FE1AEC921804B0400252D92 /* SGPageTitleViewConfigure.swift in Sources */,
 				8F6D683E216B4C8C007CFC0C /* Initialization.swift in Sources */,
 				8F15DC90217836DC00C80468 /* Video_ActivityList_Cell.swift in Sources */,
+				8FE1AECC21804B0400252D92 /* SGPageViewPopGestureVC.swift in Sources */,
 				8F6D6869216B50EC007CFC0C /* HomeVC.swift in Sources */,
 				8F6D6841216B4C8C007CFC0C /* UIButton+Extention.swift in Sources */,
 				8FCD7A3D2170723C00966DE6 /* IJKLiveBaseVC.swift in Sources */,
@@ -978,6 +1023,7 @@
 				8F4E16D3216D94480023E6A0 /* YBPopupMenu.m in Sources */,
 				8F6D6883216B694B007CFC0C /* ProfileHeaderView.swift in Sources */,
 				8F6D6895216BBF85007CFC0C /* ZL_NaviBarView.swift in Sources */,
+				8FE1AEDB21805D5600252D92 /* ZL_PagerListController.swift in Sources */,
 				8F4E16D2216D94480023E6A0 /* YBPopupMenuPath.m in Sources */,
 				8F4E16EB216DF9A30023E6A0 /* PopoverAnimator.swift in Sources */,
 				8F817B7C21725935003D444A /* HomeChannelView.swift in Sources */,
@@ -992,7 +1038,9 @@
 				8F6D688A216B69AB007CFC0C /* LoginVC.swift in Sources */,
 				8FCD7A3B217070A300966DE6 /* IJKLiveVC_Room.swift in Sources */,
 				8F6D6842216B4C8C007CFC0C /* UIImage+Extendion.swift in Sources */,
+				8FE1AECA21804B0400252D92 /* SGPageTitleView.swift in Sources */,
 				8F4E16E7216DF8840023E6A0 /* Calculate.swift in Sources */,
+				8FE1AEE1218063B400252D92 /* ZL_PagerListHeaderView.swift in Sources */,
 				8F12B1FF217890580097BC9D /* ZL_EdgeInsetsLabel.swift in Sources */,
 				8FCD7A22217046DE00966DE6 /* IJKLiveVC_Show.swift in Sources */,
 				8F4D1948216F34FC0087DA3A /* LiveModel.swift in Sources */,
@@ -1137,6 +1185,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1163,30 +1212,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Alamofire\"",
-					"-framework",
-					"\"FDFullscreenPopGesture\"",
-					"-framework",
-					"\"HandyJSON\"",
-					"-framework",
-					"\"Kingfisher\"",
-					"-framework",
-					"\"MJRefresh\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SGPagingView\"",
-					"-framework",
-					"\"SVProgressHUD\"",
-					"-framework",
-					"\"SnapKit\"",
-					"-framework",
-					"\"SwiftyJSON\"",
-					"-ObjC",
-				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.m2c2017.TadayNew-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TadayNew_Swift/TadayNew_Swift-Bridging-Header.h";
@@ -1215,30 +1242,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Alamofire\"",
-					"-framework",
-					"\"FDFullscreenPopGesture\"",
-					"-framework",
-					"\"HandyJSON\"",
-					"-framework",
-					"\"Kingfisher\"",
-					"-framework",
-					"\"MJRefresh\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SGPagingView\"",
-					"-framework",
-					"\"SVProgressHUD\"",
-					"-framework",
-					"\"SnapKit\"",
-					"-framework",
-					"\"SwiftyJSON\"",
-					"-ObjC",
-				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.m2c2017.TadayNew-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TadayNew_Swift/TadayNew_Swift-Bridging-Header.h";

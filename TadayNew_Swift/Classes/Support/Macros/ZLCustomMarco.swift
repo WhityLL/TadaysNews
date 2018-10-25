@@ -153,6 +153,9 @@ let kZLMineHeaderImageHeight: CGFloat = 230
 // 分享按钮背景高度
 let kTopViewH: CGFloat = 230
 
+let  scrollTableHeaderViewHeight: CGFloat = 200;
+let  heightForHeaderInSection: CGFloat = 50;
+
 
 // MARK: ========= 主要颜色 ==========
 /// 背景颜色
@@ -210,7 +213,6 @@ enum TTFrom: String {
     case enterAuto = "enter_auto"
     case preLoadMoreDraw = "pre_load_more_draw"
 }
-
 
 
 /// 动态图片的宽高

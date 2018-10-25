@@ -16,7 +16,6 @@ target 'TadayNew_Swift' do
   
   pod 'MJRefresh'
   pod 'SVProgressHUD'
-  pod 'SGPagingView'
   pod 'FDFullscreenPopGesture'
   pod 'SDCycleScrollView'
   
