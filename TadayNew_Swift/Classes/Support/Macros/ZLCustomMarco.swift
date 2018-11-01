@@ -220,9 +220,9 @@ enum TTFrom: String {
 // 1        screenWidth * 0.5
 // 2        (screenWidth - 35) / 2
 // 3,4,5-9    (screenWidth - 40) / 3
-let image1Width: CGFloat = SCREEN_WIDTH * 0.5
-let image2Width: CGFloat = (SCREEN_WIDTH - 35) * 0.5
-let image3Width: CGFloat = (SCREEN_WIDTH - 40) / 3
+let image1Width: CGFloat = SCREEN_WIDTH
+let image2Width: CGFloat = (SCREEN_WIDTH - 2) * 0.5
+let image3Width: CGFloat = (SCREEN_WIDTH - 4) / 3
 
 /// 从哪里调用API(获取首页、视频、小视频的新闻列表数据API)
 enum APIFrom: String {

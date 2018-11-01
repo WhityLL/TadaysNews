@@ -32,8 +32,8 @@ import UIKit
     /// SGPageContentCollectionView 内容结束拖拽方法
     @objc optional func pageContentCollectionViewDidEndDecelerating()
     
-    /// 将要展示的NSIndexPath
-    @objc optional func pageContentCollectionView(pageContentCollectionView: SGPageContentCollectionView, willDisplayIndexPath: IndexPath)
+//    /// 将要展示的NSIndexPath
+//    @objc optional func pageContentCollectionView(pageContentCollectionView: SGPageContentCollectionView, willDisplayIndexPath: IndexPath)
 }
 
 private let cellID = "cellID"
@@ -63,9 +63,7 @@ class SGPageContentCollectionView: UIView {
     var isScrollEnabled: Bool = true
     /// 点击标题触发动画切换滚动内容，默认为 false
     var isAnimated: Bool = false
-    
-    var mainTableView: UITableView?
-    
+
     // MARK: - 私有属性
     private var parentVC: UIViewController?
     private var childVCs: [UIViewController] = []
@@ -136,12 +134,6 @@ extension SGPageContentCollectionView: UICollectionViewDelegate, UICollectionVie
         childVC.didMove(toParent: parentVC)
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if (delegateCollectionView != nil) && (delegateCollectionView?.responds(to: #selector(delegateCollectionView?.pageContentCollectionView(pageContentCollectionView:willDisplayIndexPath:))))! {
-            delegateCollectionView?.pageContentCollectionView!(pageContentCollectionView: self, willDisplayIndexPath: indexPath)
-        }
-    }
 }
 
 // MARK: - UIScrollView - 代理方法
@@ -154,17 +146,7 @@ extension SGPageContentCollectionView {
         }
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        mainTableView?.isScrollEnabled = true
-    }
-    
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        mainTableView?.isScrollEnabled = true
-    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        mainTableView?.isScrollEnabled = true
-        
         scroll = false
         let offsetX = scrollView.contentOffset.x
         previousCVCIndex = Int(offsetX / scrollView.frame.size.width)
@@ -179,10 +161,6 @@ extension SGPageContentCollectionView {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if isAnimated == true && scroll == false {
             return
-        }
-        
-        if scrollView.isTracking || scrollView.isDecelerating {
-            mainTableView?.isScrollEnabled = false
         }
         
         // 1、定义获取需要的数据

@@ -15,16 +15,16 @@ class LiveVC_VideoListVC: BaseViewController {
     var categary : NewsTitleCategory = .recommend
     
     /// 数据
-    var dataArr = [Any]()
+    private var dataArr = [Any]()
     /// 刷新时间
-    var maxBehotTime: TimeInterval = Date().timeIntervalSince1970
+    private var maxBehotTime: TimeInterval = Date().timeIntervalSince1970
     /// TTFrom
-    var ttfrom: TTFrom = .enterAuto
+    private var ttfrom: TTFrom = .enterAuto
     /// listCount
-    var listCount : Int = 20
-    
-    private lazy var tableView: UITableView = {
-        let tableView : UITableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - kStatusBarAndNavigationBarHeight - kTabbarHeight - 36), style: .grouped)
+    private var listCount : Int = 20
+
+    lazy var tableView: UITableView = {
+        let tableView : UITableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - kStatusBarAndNavigationBarHeight - kTabbarHeight - 36), style: .plain)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,6 +40,29 @@ class LiveVC_VideoListVC: BaseViewController {
         view.addSubview(tableView)
         return tableView
     }()
+    
+//    lazy var controlView : ZFPlayerControlView = {
+//        let controlView = ZFPlayerControlView()
+//        controlView.fastViewAnimated = true
+//        return controlView
+//    }()
+//
+//    lazy var player: ZFPlayerController = {
+//        let playerManager: ZFAVPlayerManager = ZFAVPlayerManager()
+//        let player: ZFPlayerController = ZFPlayerController.player(with: tableView, playerManager: playerManager, containerViewTag: 2001)
+//        player.shouldAutoPlay = false
+//        player.playerDisapperaPercent = 1.0
+//        player.controlView = controlView
+//        player.playerDidToEnd = { asset in
+//
+//        }
+//
+//        player.orientationWillChange = { player , isFullScreen in
+//
+//        }
+//
+//        return player
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +97,10 @@ extension LiveVC_VideoListVC : UITableViewDelegate,UITableViewDataSource {
             if self.categary == .subv_video_live_toutiao {
                 self.togoIJKLiveVC(indexPath: indexPath)
             }else{
+                
+//                let vc: ZL_VideoListVC = ZL_VideoListVC()
+//                self.navigationController?.pushViewController(vc, animated: true)
+                
                 self.togoPlayVideoVC(indexPath: indexPath)
             }
         }
@@ -100,6 +127,14 @@ extension LiveVC_VideoListVC : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.categary == .subv_video_live_toutiao {
+            togoIJKLiveVC(indexPath: indexPath)
+        }else{
+            togoPlayVideoVC(indexPath: indexPath)
+        }
     }
     
 }
@@ -167,8 +202,8 @@ extension LiveVC_VideoListVC {
         }
     }
     
-    
-    func togoIJKLiveVC(indexPath: IndexPath) {
+    /// 跳转到直播
+    private func togoIJKLiveVC(indexPath: IndexPath) {
         let liveData = self.dataArr[indexPath.section] as! LiveModel
         
         var ijkLiveVC : IJKLiveBaseVC
@@ -187,9 +222,66 @@ extension LiveVC_VideoListVC {
         }
     }
     
-    func togoPlayVideoVC(indexPath: IndexPath) {
-//        let videoModel = self.dataArr[indexPath.section] as! NewsModel
-       
+    /// 跳转到视频播放
+    private func togoPlayVideoVC(indexPath: IndexPath) {
+        
+        let news: NewsModel = self.dataArr[indexPath.section] as! NewsModel
+        
+        /// 需要解析视频的真实地址
+        NetManager.parseVideoRealURL(video_id: news.video_id) { (realVideo: RealVideo) in
+            let detailVC: LiveVC_VideoPlayDetailVC = LiveVC_VideoPlayDetailVC()
+            detailVC.videoUrl = realVideo.video_list.video_1.mainURL
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
     
 }
+
+//extension LiveVC_VideoListVC: UIScrollViewDelegate{
+//    override var shouldAutorotate: Bool{
+//        return player.shouldAutorotate
+//    }
+//
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+//        if player.isFullScreen && player.orientationObserver.fullScreenMode == .landscape {
+//            return .landscape
+//        }
+//        return .portrait
+//    }
+//
+//    override var preferredStatusBarStyle: UIStatusBarStyle{
+//        if player.isFullScreen {
+//            return .lightContent
+//        }
+//        return .default
+//    }
+//
+//    override var prefersStatusBarHidden: Bool{
+//        return player.isStatusBarHidden
+//    }
+//
+//    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+//        return .slide
+//    }
+//
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        scrollView.zf_scrollViewDidEndDecelerating()
+//    }
+//
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        scrollView.zf_scrollViewDidEndDraggingWillDecelerate(decelerate)
+//    }
+//
+//    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+//        scrollView.zf_scrollViewDidScrollToTop()
+//    }
+//
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        scrollView.zf_scrollViewDidScroll()
+//    }
+//
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        scrollView.zf_scrollViewWillBeginDragging()
+//    }
+//
+//}

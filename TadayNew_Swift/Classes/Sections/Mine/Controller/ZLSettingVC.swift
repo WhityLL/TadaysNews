@@ -49,8 +49,7 @@ class ZLSettingVC: BaseViewController {
         tableView.dataSource = self
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.top.equalTo(-44)
-            make.bottom.left.right.equalTo(0)
+            make.top.bottom.left.right.equalTo(0)
         }
         self.tableView = tableView
     }

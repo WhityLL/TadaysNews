@@ -180,6 +180,16 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource,UIScrollViewDeleg
             self.navigationController?.pushViewController(settingVC, animated: true)
         }
         
+        if cell?.textLabel?.text == "我的关注" {
+            let vc = ZL_UserCareDetailVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        if cell?.textLabel?.text == "消息通知" {
+            let vc = ZL_NotificationPopVC()
+            present(vc, animated: true, completion: nil)
+        }
+        
     }
     
     // MARK: - UIScrollViewDelagate

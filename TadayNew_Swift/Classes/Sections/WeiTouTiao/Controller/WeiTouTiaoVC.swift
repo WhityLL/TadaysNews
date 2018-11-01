@@ -7,8 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class WeiTouTiaoVC: BaseViewController {
+class WeiTouTiaoVC: UITableViewController {
+    
+    let disposeBag = DisposeBag()
+    
+    var categary : NewsTitleCategory = .weitoutiao
+    
+    /// 数据
+    var dataArr = [Any]()
+    /// 刷新时间
+    var maxBehotTime: TimeInterval = Date().timeIntervalSince1970
+    /// TTFrom
+    var ttfrom: TTFrom = .enterAuto
+    /// listCount
+    var listCount : Int = 20
     
     /// 导航栏按钮 左边
     private lazy var leftNaviItem : UIBarButtonItem = {
@@ -25,22 +40,20 @@ class WeiTouTiaoVC: BaseViewController {
         return rightNaviItem
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.leftBarButtonItem = leftNaviItem
         self.navigationItem.rightBarButtonItem = rightNaviItem
         
-        requestData()
-    }
-}
-
-
-extension WeiTouTiaoVC {
-    
-    private func requestData() {
+        tableView.estimatedRowHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
+        tableView.estimatedSectionHeaderHeight = 0
         
+        tableView.zl_registerCell(cell: WeiTouTiaoCell.self)
+        tableView.separatorStyle = .none
+        
+        setupRefresh()
     }
     
     ///导航栏按钮点击事件
@@ -62,5 +75,85 @@ extension WeiTouTiaoVC {
         btn.setTitleColor(ZLBlackTextColor(), for: .normal)
         btn.setBtn(zl_BtnlayoutType: UIButton.ZL_ButtonLayoutType.ZL_ButtonLayoutTypeCenterImageTop, zl_padding_inset: 1 ,space: 2)
         return btn
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+}
+
+
+extension WeiTouTiaoVC {
+    
+    private func setupRefresh() {
+        tableView.addHeaderGifRefresh {
+            self.ttfrom = .pull
+            self.maxBehotTime = Date().timeIntervalSince1970
+            self.tableView.resetNoMoreData()
+            self.requestData()
+        }
+        
+        tableView.addFooterGifRefresh {
+            self.ttfrom = .loadMore
+            self.requestData()
+        }
+        
+        tableView.beginHeaderRefresh()
+    }
+    
+    private func requestData() {
+        
+        NetManager.loadApiNewsFeeds(apiFrom: .smallVideo, category: self.categary, ttFrom: self.ttfrom, maxBehotTime: self.maxBehotTime, listCount: self.listCount) { (aNewsModelList) in
+            
+            if self.tableView.mj_header.isRefreshing {self.tableView.endHeaderRefresh()}
+            if self.tableView.mj_footer.isRefreshing {self.tableView.endFooterRefresh()}
+            
+            if (self.ttfrom == TTFrom.pull || self.ttfrom == TTFrom.enterAuto) { self.dataArr.removeAll() }
+            
+            self.dataArr.append(contentsOf: aNewsModelList)
+            
+            self.listCount = self.dataArr.count > 0 ? self.dataArr.count : 20
+            
+            self.tableView.reloadData()
+            
+            if aNewsModelList.count == 0 {
+                self.tableView.noticeNoMoreData()
+            }
+        }
+        
+    }
+}
+
+extension WeiTouTiaoVC {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let aNews: NewsModel = dataArr[indexPath.row] as! NewsModel
+        return aNews.weitoutiaoHeight
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArr.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell : WeiTouTiaoCell = tableView.dequeueReusableCell(withIdentifier: "WeiTouTiaoCell", for: indexPath) as! WeiTouTiaoCell
+        
+        cell.aNews = dataArr[indexPath.row] as! NewsModel
+
+        /// 点击了
+        cell.didSelectSubImageViewCellClasure = { (selectedIndex: Int) in
+            
+            let vc = PreviewImageViewVC()
+            vc.selectedIndex = selectedIndex
+            vc.images = cell.aNews.large_image_list
+            self.present(vc, animated: false, completion: nil)
+        }
+        
+        cell.btn_corver.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: {
+            print("=-=-=-=-=-=-=-=-")
+        }).disposed(by: disposeBag)
+        
+        return cell
     }
 }

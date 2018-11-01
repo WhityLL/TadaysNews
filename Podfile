@@ -13,6 +13,7 @@ target 'TadayNew_Swift' do
   pod 'Kingfisher'
   
   pod 'SnapKit'
+  pod 'IBAnimatable'
   
   pod 'MJRefresh'
   pod 'SVProgressHUD'
@@ -20,7 +21,12 @@ target 'TadayNew_Swift' do
   pod 'SDCycleScrollView'
   
   pod 'RxSwift'
+  pod 'RxCocoa'
   
+#  pod 'ZFPlayer', '~> 3.2.1'
+#  pod 'ZFPlayer/ControlView'
+#  pod 'ZFPlayer/AVPlayer', '~> 3.0'
+
 #  pod 'BMPlayer'
 #  pod 'SQLite.swift'
 #  pod 'SwiftTheme'

@@ -66,7 +66,13 @@ extension Video_ActivityListVC: SDCycleScrollViewDelegate{
     
     func togoMoreVideoVC() {
         
-        let vc = ZL_PagerListController()
+        // 普通样式
+//        let vc = ZL_PageListController()
+        // 子控制器刷新
+//        let vc = ZL_PageListRefreshController()
+        /// 主控制器刷新
+//        let vc = ZL_PageListMainTableRefresh()
+        let vc = ZL_PageListController_HeaderBigger()
         
         navigationController?.pushViewController(vc, animated: true)
         

@@ -2,8 +2,11 @@ PODS:
   - Alamofire (4.7.3)
   - FDFullscreenPopGesture (1.1)
   - HandyJSON (4.2.0)
+  - IBAnimatable (5.2.1)
   - Kingfisher (4.10.0)
   - MJRefresh (3.1.15.7)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
@@ -18,8 +21,10 @@ DEPENDENCIES:
   - Alamofire
   - FDFullscreenPopGesture
   - HandyJSON
+  - IBAnimatable
   - Kingfisher
   - MJRefresh
+  - RxCocoa
   - RxSwift
   - SDCycleScrollView
   - SnapKit
@@ -31,8 +36,10 @@ SPEC REPOS:
     - Alamofire
     - FDFullscreenPopGesture
     - HandyJSON
+    - IBAnimatable
     - Kingfisher
     - MJRefresh
+    - RxCocoa
     - RxSwift
     - SDCycleScrollView
     - SDWebImage
@@ -44,8 +51,10 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   HandyJSON: 9dfc026c7d7adc1f0f8ba8b181495f0e0763b0f4
+  IBAnimatable: a46b835ec6875178516cf7e014a40194d6bfa3fc
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
@@ -53,6 +62,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: bdcdb072d6ca91c8ff3f7f1268eb3204ce4fd18d
+PODFILE CHECKSUM: ac862ac2a50f19896773fdd7b032e4e44d8e50f5
 
 COCOAPODS: 1.5.3

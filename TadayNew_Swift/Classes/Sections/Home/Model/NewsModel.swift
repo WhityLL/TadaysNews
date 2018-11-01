@@ -13,8 +13,8 @@ import HandyJSON
 struct NewsModel: HandyJSON {
     
     var weitoutiaoHeight: CGFloat {
-        // 50 + contentH + 5 + middleViewH + 65
-        var height: CGFloat = 120
+        // 50 + contentH + 5 + middleViewH + 50
+        var height: CGFloat = 105
         height += contentH
         height += collectionViewH
         return height

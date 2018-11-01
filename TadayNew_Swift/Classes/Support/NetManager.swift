@@ -36,6 +36,9 @@ protocol NetManagerProtocol {
     // MARK: 小视频活动列表数据
     static func loadVideoActivityData(ttFrom: TTFrom, listCount: Int, _ completionHandler: @escaping (_ activityModel: VideoActivityModel) -> ())
     
+    // MARK: 解析头条的视频真实播放地址
+    static func parseVideoRealURL(video_id: String, completionHandler: @escaping (_ realVideo: RealVideo) -> ())
+    
 }
 
 extension NetManagerProtocol {
@@ -288,6 +291,32 @@ extension NetManagerProtocol {
                     guard obj.message == "success" else { return }
                     completionHandler(obj.data)
                 }
+            }
+        }
+    }
+    
+    /// 解析头条的视频真实播放地址
+    /// - [可参考这篇博客](http://blog.csdn.net/dianliang01/article/details/73163086)
+    /// - parameter video_id: 视频 id
+    /// - parameter completionHandler: 返回视频真实播放地址
+    static func parseVideoRealURL(video_id: String, completionHandler: @escaping (_ realVideo: RealVideo) -> ()) {
+        
+        let r = arc4random() // 随机数
+        
+        let url: NSString = "/video/urls/v/1/toutiao/mp4/\(video_id)?r=\(r)" as NSString
+        let data: NSData = url.data(using: String.Encoding.utf8.rawValue)! as NSData
+        // 使用 crc32 校验
+        var crc32: UInt64 = UInt64(data.getCRC32())
+        // crc32 可能为负数，要保证其为正数
+        if crc32 < 0 { crc32 += 0x100000000 }
+        // 拼接 url
+        let realURL = "http://i.snssdk.com/video/urls/v/1/toutiao/mp4/\(video_id)?r=\(r)&s=\(crc32)"
+        
+        Alamofire.request(realURL).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { return }
+            if let value = response.result.value {
+                completionHandler(RealVideo.deserialize(from: JSON(value)["data"].dictionaryObject)!)
             }
         }
     }
