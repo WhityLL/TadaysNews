@@ -19,7 +19,7 @@ class HomeChannelPOPVC: UIViewController {
         let contentView = HomeChannelView.init(frame: CGRect.init(x: 0, y: SCREEN_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - kStatusBarHeight))
 
         view.addSubview(contentView)
-        contentView.backgroundColor = ZLRandomColor()
+
         return contentView
     }()
     

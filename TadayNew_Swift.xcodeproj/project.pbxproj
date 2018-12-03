@@ -102,6 +102,7 @@
 		8F817B86217323CB003D444A /* ChannelRecomendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F817B84217323CB003D444A /* ChannelRecomendCell.xib */; };
 		8F817B8D21732AB4003D444A /* RecommendChannelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F817B8B21732AB4003D444A /* RecommendChannelHeaderView.swift */; };
 		8F817B9121732ACD003D444A /* UserSelectedChannelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F817B8F21732ACD003D444A /* UserSelectedChannelHeaderView.swift */; };
+		8F847DB021B02C2A0079A85A /* HomeChannelBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F847DAF21B02C2A0079A85A /* HomeChannelBaseView.swift */; };
 		8F84A72C21860FF20024CA29 /* NSData+CRC32.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F84A72B21860FF20024CA29 /* NSData+CRC32.m */; };
 		8F84A72E2186B2090024CA29 /* ZL_VideoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F84A72D2186B2090024CA29 /* ZL_VideoListVC.swift */; };
 		8F84A7C62186D83B0024CA29 /* ZFPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F84A7A22186D83B0024CA29 /* ZFPlayer.framework */; };
@@ -261,6 +262,7 @@
 		8F817B84217323CB003D444A /* ChannelRecomendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelRecomendCell.xib; sourceTree = "<group>"; };
 		8F817B8B21732AB4003D444A /* RecommendChannelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendChannelHeaderView.swift; sourceTree = "<group>"; };
 		8F817B8F21732ACD003D444A /* UserSelectedChannelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectedChannelHeaderView.swift; sourceTree = "<group>"; };
+		8F847DAF21B02C2A0079A85A /* HomeChannelBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChannelBaseView.swift; sourceTree = "<group>"; };
 		8F84A72A21860FF20024CA29 /* NSData+CRC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CRC32.h"; sourceTree = "<group>"; };
 		8F84A72B21860FF20024CA29 /* NSData+CRC32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CRC32.m"; sourceTree = "<group>"; };
 		8F84A72D2186B2090024CA29 /* ZL_VideoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZL_VideoListVC.swift; sourceTree = "<group>"; };
@@ -837,6 +839,7 @@
 		8F6D6867216B50BD007CFC0C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8F847DAF21B02C2A0079A85A /* HomeChannelBaseView.swift */,
 				8F817B7B21725935003D444A /* HomeChannelView.swift */,
 				8F817B83217323CB003D444A /* ChannelRecomendCell.swift */,
 				8F817B84217323CB003D444A /* ChannelRecomendCell.xib */,
@@ -1256,6 +1259,7 @@
 				8F84A7D42186D83B0024CA29 /* ZFPortraitControlView.m in Sources */,
 				8FE1AEC921804B0400252D92 /* SGPageTitleViewConfigure.swift in Sources */,
 				8F6D683E216B4C8C007CFC0C /* Initialization.swift in Sources */,
+				8F847DB021B02C2A0079A85A /* HomeChannelBaseView.swift in Sources */,
 				8F15DC90217836DC00C80468 /* Video_ActivityList_Cell.swift in Sources */,
 				8F84A7CD2186D83B0024CA29 /* ZFNetworkSpeedMonitor.m in Sources */,
 				8FE1AECC21804B0400252D92 /* SGPageViewPopGestureVC.swift in Sources */,
