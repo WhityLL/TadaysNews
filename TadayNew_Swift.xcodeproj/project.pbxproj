@@ -398,12 +398,13 @@
 		817BA58E2227EB2B00F52B21 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
-				8F7DF6AF216C88730042D2A9 /* NetManager.swift */,
+				817BA5CC2227F10D00F52B21 /* NetManager */,
 				8F6D688B216B6A98007CFC0C /* Other */,
 				8F6D682D216B4C8C007CFC0C /* Tools */,
 				8F6D682F216B4C8C007CFC0C /* Extension */,
 				8F6D6837216B4C8C007CFC0C /* Macros */,
 				8F6D6824216B4C8C007CFC0C /* Venders */,
+				8F7DF6AF216C88730042D2A9 /* NetManager.swift */,
 			);
 			path = Expand;
 			sourceTree = "<group>";
@@ -524,6 +525,13 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		817BA5CC2227F10D00F52B21 /* NetManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetManager;
+			sourceTree = "<group>";
+		};
 		8F4930C921897CCE0069C0B5 /* UserCare */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,13 +615,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8F4E16F4216E0C590023E6A0 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		8F6D6805216B469C007CFC0C = {
 			isa = PBXGroup;
 			children = (
@@ -635,10 +636,9 @@
 		8F6D6810216B469C007CFC0C /* TadayNew_Swift */ = {
 			isa = PBXGroup;
 			children = (
-				817BA58F2227EB3800F52B21 /* Resources */,
-				817BA58E2227EB2B00F52B21 /* Expand */,
 				817BA58D2227EB2500F52B21 /* Main */,
-				8F4E16F4216E0C590023E6A0 /* Sources */,
+				817BA58E2227EB2B00F52B21 /* Expand */,
+				817BA58F2227EB3800F52B21 /* Resources */,
 				8F6D6811216B469C007CFC0C /* AppDelegate.swift */,
 				8F6D6815216B469C007CFC0C /* Main.storyboard */,
 				8F6D681A216B469E007CFC0C /* LaunchScreen.storyboard */,
@@ -1174,11 +1174,14 @@
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -1192,11 +1195,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);

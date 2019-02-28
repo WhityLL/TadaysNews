@@ -7,9 +7,10 @@ target 'TadayNew_Swift' do
 
   # Pods for TadayNew_Swift
 
-  pod 'Alamofire'
+  pod 'Moya'
   pod 'SwiftyJSON'
   pod 'HandyJSON'
+  
   pod 'Kingfisher'
   
   pod 'SnapKit'
@@ -22,6 +23,8 @@ target 'TadayNew_Swift' do
   
   pod 'RxSwift'
   pod 'RxCocoa'
+  
+  pod 'SkeletonView'
   
 #  pod 'ZFPlayer', '~> 3.2.1'
 #  pod 'ZFPlayer/ControlView'
