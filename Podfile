@@ -9,7 +9,7 @@ target 'TadayNew_Swift' do
 
   pod 'Moya'
   pod 'SwiftyJSON'
-  pod 'HandyJSON'
+  pod 'HandyJSON', '~> 5.0.0-beta.1'
   
   pod 'Kingfisher'
   

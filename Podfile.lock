@@ -1,32 +1,32 @@
 PODS:
-  - Alamofire (4.8.1)
+  - Alamofire (4.8.2)
   - FDFullscreenPopGesture (1.1)
-  - HandyJSON (4.2.0)
+  - HandyJSON (5.0.0-beta.1)
   - IBAnimatable (5.2.1)
-  - Kingfisher (4.10.0)
-  - MJRefresh (3.1.15.7)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Kingfisher (4.10.1)
+  - MJRefresh (3.1.16)
+  - Moya (13.0.0):
+    - Moya/Core (= 13.0.0)
+  - Moya/Core (13.0.0):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
+    - Result (~> 4.1)
   - Result (4.1.0)
-  - RxCocoa (4.3.1):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.3.1)
-  - SDCycleScrollView (1.75):
-    - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
-  - SkeletonView (1.4.1)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.0.2):
+    - SDWebImage/Core (= 5.0.2)
+  - SDWebImage/Core (5.0.2)
+  - SkeletonView (1.5)
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
-  - SwiftyJSON (4.2.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - FDFullscreenPopGesture
-  - HandyJSON
+  - HandyJSON (~> 5.0.0-beta.1)
   - IBAnimatable
   - Kingfisher
   - MJRefresh
@@ -59,23 +59,23 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  HandyJSON: 9dfc026c7d7adc1f0f8ba8b181495f0e0763b0f4
+  HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   IBAnimatable: a46b835ec6875178516cf7e014a40194d6bfa3fc
-  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
+  Moya: 161263550064ff8a4948e8ff63137fd72a876292
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
-  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
-  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  SkeletonView: 60d6ce7edb0cb4c7758db33c74add50392b3c475
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
+  SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
+  SkeletonView: 6cbb80f82f8bdee3f9093e2fa03b84819b4bd826
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: f5a526d705088636cd0ac6db43efd0dc983e486e
+PODFILE CHECKSUM: 7b6a44fba29f30885596887dac2b92380d0eda2a
 
 COCOAPODS: 1.6.1

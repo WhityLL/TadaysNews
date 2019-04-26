@@ -10,7 +10,10 @@ import UIKit
 
 class LiveVC: BaseViewController {
 
+    let titleNames : NSMutableArray = NSMutableArray.init()
+    let vcs : NSMutableArray = NSMutableArray.init()
     let pageViewH : CGFloat = 36
+    var lastSelectedIndex: Int = 0
     
     /// 自定义导航栏
     private lazy var naviBar = ZL_NaviBarView()
@@ -36,7 +39,7 @@ class LiveVC: BaseViewController {
         navigationItem.titleView = naviBar
         
         //点击事件
-        clickAction()
+        naviBarClickAction()
         
         requestData()
     }
@@ -48,21 +51,18 @@ extension LiveVC {
     private func requestData() {
         
         NetManager.loadVideoApiCategoies { (titleModelsArr : [HomeNewsTitleModel]) in
-
-            let titleNames : NSMutableArray = NSMutableArray.init()
-            let vcs : NSMutableArray = NSMutableArray.init()
             
             for obj : HomeNewsTitleModel in titleModelsArr {
-                titleNames.add(obj.name)
+                self.titleNames.add(obj.name)
                 
                 switch obj.category {
                 case .care:
                     let careVC = UserCareVC()
-                    vcs.add(careVC)
+                    self.vcs.add(careVC)
                 default :
                     let videoVC: LiveVC_VideoListVC = LiveVC_VideoListVC()
                     videoVC.categary = obj.category
-                    vcs.add(videoVC)
+                    self.vcs.add(videoVC)
                 }
             }
             
@@ -74,19 +74,19 @@ extension LiveVC {
             configuration.indicatorColor = .clear
             configuration.showIndicator = false
             configuration.titleTextZoom = true
-            self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.pageViewH), delegate: self , titleNames: titleNames.mutableCopy() as! [String], configure: configuration)
+            self.pageTitleView = SGPageTitleView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: self.pageViewH), delegate: self , titleNames: self.titleNames.mutableCopy() as! [String], configure: configuration)
             self.pageTitleView!.backgroundColor = .white
             self.pageTitleView?.index = 1
             self.view.addSubview(self.pageTitleView!)
             
             // 内容视图
-            self.pageContentView = SGPageContentScrollView.init(frame: CGRect(x: 0, y: self.pageViewH, width: SCREEN_WIDTH, height: self.view.height - self.pageViewH), parentVC: self, childVCs: vcs as! [UIViewController])
+            self.pageContentView = SGPageContentScrollView.init(frame: CGRect(x: 0, y: self.pageViewH, width: SCREEN_WIDTH, height: self.view.height - self.pageViewH), parentVC: self, childVCs: self.vcs as! [UIViewController])
             self.pageContentView!.delegateScrollView = self
             self.view.addSubview(self.pageContentView!)
         }
     }
     
-    private func clickAction() {
+    private func naviBarClickAction() {
         
         naviBar.didClickCameraBtn = { (sender) in
             self.showRelyOn(view: sender)
@@ -103,7 +103,14 @@ extension LiveVC {
 extension LiveVC : SGPageTitleViewDelegate,SGPageContentScrollViewDelegate{
     /// 联动 pageContent 的方法
     func pageTitleView(pageTitleView: SGPageTitleView, index: Int) {
-        self.pageContentView!.setPageContentScrollView(index: index)
+        if lastSelectedIndex == index {
+            let vc: BaseViewController = vcs[index] as! BaseViewController
+            vc.refreshData()
+        }else{
+            lastSelectedIndex = index
+            self.pageContentView!.setPageContentScrollView(index: index)
+        }
+        print(index)
     }
     
     /// 联动 SGPageTitleView 的方法

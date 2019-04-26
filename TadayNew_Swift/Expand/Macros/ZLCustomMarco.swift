@@ -102,19 +102,20 @@ enum ZLOtherLoginButtonType: Int {
 let YMTabBarDidSelectedNotification = "YMTabBarDidSelectedNotification"
 
 /// 服务器地址
-let BASE_URL = "http://lf.snssdk.com"
+let BASE_URL = "http://is-hl.snssdk.com"
 //let BASE_URL = "http://ib.snssdk.com"
 //let BASE_URL = "https://is.snssdk.com"
 
 /// iid 未登录用户 id，只要安装了今日头条就会生成一个 iid
 /// 可以在自己的手机上安装一个今日头条，然后通过 charles 抓取一下这个 iid，
 /// 替换成自己的，再进行测试
-let version_code: String = "6.9.0"
+let app_name: String = "news_article"
+let version_code: String = "7.1.7"
 let device_id: Int = 46849852544
 let iid: Int = 45513839627
 let device_platform: String = "iphone"
 let aid: Int = 13
-let ab_feature: String = "z1"
+let ab_feature: String = "201617,z2"
 
 
 

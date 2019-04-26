@@ -49,7 +49,8 @@ extension NetManagerProtocol {
     /// - Parameter completionHandler: 返回标题数据
     static func loadHomeNewsTitleData(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ()) {
         let url = BASE_URL + "/article/category/get_subscribed/v4/?"
-        let params = ["version_code": version_code,
+        let params = ["app_name": app_name,
+                      "version_code": version_code,
                       "device_id": device_id,
                       "device_platform": device_platform,
                       "aid":aid,
@@ -74,7 +75,8 @@ extension NetManagerProtocol {
     // MARK: 点击首页加号按钮，获取频道推荐数据
     static func loadHomeCategoryRecommend(completionHandler:@escaping (_ titles: [HomeNewsTitleModel]) -> ()){
         let url = BASE_URL + "/article/category/get_extra/v1/?"
-        let params = ["device_id": device_id,
+        let params = ["app_name": app_name,
+                      "device_id": device_id,
                       "iid": iid,
                       "device_platform": device_platform,
                       "aid":aid,
@@ -92,7 +94,7 @@ extension NetManagerProtocol {
         }
     }
     
-    /// 获取首页、西瓜视频（除直播外）、小视频（推荐、游戏列表）新闻列表数据
+    /// 获取首页、西瓜视频（除直播外）、小视频（推荐、附近、游戏列表）列表数据
     /// - parameter category: 新闻类别
     /// - parameter ttFrom: 那个界面
     /// - parameter listCount: 数据数量
@@ -107,7 +109,8 @@ extension NetManagerProtocol {
             url = BASE_URL + "/api/news/feed/v88/?"
         }
         
-        var params = ["version_code": version_code,
+        var params = ["app_name": app_name,
+                      "version_code": version_code,
                       "device_platform": device_platform,
                       "aid":aid,
                       "device_id": device_id,
@@ -119,7 +122,10 @@ extension NetManagerProtocol {
                       "refresh_reason": 1,
                       "tt_from": ttFrom,
                       "min_behot_time": Date().timeIntervalSince1970,
-                      "iid": iid] as [String: Any]
+                      "iid": iid,
+                      "loc_mode": 1,
+                      "LBS_status": "authroize"
+            ] as [String : Any]
         
         //字典的增加
         if ttFrom == TTFrom.pull || ttFrom == TTFrom.enterAuto {
@@ -151,7 +157,9 @@ extension NetManagerProtocol {
     /// - parameter newsTitles: 视频标题数组
     static func loadVideoApiCategoies(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ()) {
         let url = BASE_URL + "/video_api/get_category/v3/?"
-        let params = ["version_code": version_code,
+        let params = [
+                      "app_name": app_name,
+                      "version_code": version_code,
                       "device_id": device_id,
                       "device_platform": device_platform,
                       "aid":aid,
@@ -189,9 +197,11 @@ extension NetManagerProtocol {
         
         let url: String = BASE_URL + "/api/news/feed/v64/?"
         
-        let randomNumber:Int = Int(arc4random() % 1000) + 10
+        let randomNumber:Int = Int(arc4random() % 1000) + 5
         
-        var params = ["version_code": version_code,
+        var params = [
+                      "app_name": app_name,
+                      "version_code": version_code,
                       "device_platform": device_platform,
                       "aid":aid,
                       "device_id": device_id,
@@ -265,7 +275,7 @@ extension NetManagerProtocol {
     }
     
     
-    /// 小视频（活动）
+    /// 小视频（-活动）
     ///
     /// - Parameter completionHandler:
     static func loadVideoActivityData(ttFrom: TTFrom, listCount: Int, _ completionHandler: @escaping (_ activityModel: VideoActivityModel) -> ()){

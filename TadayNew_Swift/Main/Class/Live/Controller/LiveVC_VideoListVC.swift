@@ -41,34 +41,17 @@ class LiveVC_VideoListVC: BaseViewController {
         return tableView
     }()
     
-//    lazy var controlView : ZFPlayerControlView = {
-//        let controlView = ZFPlayerControlView()
-//        controlView.fastViewAnimated = true
-//        return controlView
-//    }()
-//
-//    lazy var player: ZFPlayerController = {
-//        let playerManager: ZFAVPlayerManager = ZFAVPlayerManager()
-//        let player: ZFPlayerController = ZFPlayerController.player(with: tableView, playerManager: playerManager, containerViewTag: 2001)
-//        player.shouldAutoPlay = false
-//        player.playerDisapperaPercent = 1.0
-//        player.controlView = controlView
-//        player.playerDidToEnd = { asset in
-//
-//        }
-//
-//        player.orientationWillChange = { player , isFullScreen in
-//
-//        }
-//
-//        return player
-//    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupRefresh()
     
+    }
+    
+    
+    override func refreshData() {
+        tableView.beginHeaderRefresh()
     }
 
 }

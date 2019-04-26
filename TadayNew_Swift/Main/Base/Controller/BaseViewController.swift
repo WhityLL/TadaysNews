@@ -64,4 +64,6 @@ extension BaseViewController {
         }
     }
     
+    @objc func refreshData() {}
+    
 }
