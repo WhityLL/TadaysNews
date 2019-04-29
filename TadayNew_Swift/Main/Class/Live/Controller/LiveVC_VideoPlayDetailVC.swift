@@ -73,8 +73,8 @@ class LiveVC_VideoPlayDetailVC: UIViewController {
         containerView.addSubview(playBtn)
         view.addSubview(changeBtn)
         view.addSubview(nextBtn)
-        
-        player.assetURLs = assetURLs as? [URL]
+        player.assetURL = URL.init(string: videoUrl)!
+//        player.assetURLs = assetURLs as? [URL]
     }
     
 }

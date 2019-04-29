@@ -65,6 +65,7 @@ extension VideoVC_VideoListVC : UICollectionViewDelegate,UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("点击=\(indexPath.item)")
+        self.togoIJKLiveVC(indexPath: indexPath);
     }
 }
 
@@ -99,6 +100,17 @@ extension VideoVC_VideoListVC {
             self.listCount = self.dataArr.count > 0 ? self.dataArr.count : 6
             
             self.collectionView.reloadData()
+            
         }
+    }
+    
+    /// 跳转到直播
+    private func togoIJKLiveVC(indexPath: IndexPath) {
+        let liveData = self.dataArr[indexPath.item] as NewsModel
+        print(liveData)
+        
+        let ijkVideoPlayVC = IJKVideo_PlayVC()
+        ijkVideoPlayVC.liveData = liveData
+        self.present(ZL_NaviVC.init(rootViewController: ijkVideoPlayVC), animated: true, completion: nil)
     }
 }

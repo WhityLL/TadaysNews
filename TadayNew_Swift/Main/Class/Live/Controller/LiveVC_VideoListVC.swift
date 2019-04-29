@@ -80,10 +80,6 @@ extension LiveVC_VideoListVC : UITableViewDelegate,UITableViewDataSource {
             if self.categary == .subv_video_live_toutiao {
                 self.togoIJKLiveVC(indexPath: indexPath)
             }else{
-                
-//                let vc: ZL_VideoListVC = ZL_VideoListVC()
-//                self.navigationController?.pushViewController(vc, animated: true)
-                
                 self.togoPlayVideoVC(indexPath: indexPath)
             }
         }

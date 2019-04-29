@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811CCD2F227704D100323F7E /* IJKVideo_PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CCD2E227704D100323F7E /* IJKVideo_PlayVC.swift */; };
 		817BA5B82227ECBA00F52B21 /* ZFPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817BA5942227ECBA00F52B21 /* ZFPlayer.framework */; };
 		817BA5B92227ECBA00F52B21 /* ZFIJKPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 817BA5972227ECBA00F52B21 /* ZFIJKPlayerManager.m */; };
 		817BA5BA2227ECBA00F52B21 /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 817BA5992227ECBA00F52B21 /* ZFAVPlayerManager.m */; };
@@ -161,6 +162,7 @@
 /* Begin PBXFileReference section */
 		5BFCD50C6CBF7B898A055457 /* Pods_TadayNew_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TadayNew_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3F3C76F4AB8B687E210107 /* Pods-TadayNew_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TadayNew_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift.release.xcconfig"; sourceTree = "<group>"; };
+		811CCD2E227704D100323F7E /* IJKVideo_PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJKVideo_PlayVC.swift; sourceTree = "<group>"; };
 		817BA5942227ECBA00F52B21 /* ZFPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZFPlayer.framework; sourceTree = "<group>"; };
 		817BA5962227ECBA00F52B21 /* ZFIJKPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFIJKPlayerManager.h; sourceTree = "<group>"; };
 		817BA5972227ECBA00F52B21 /* ZFIJKPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFIJKPlayerManager.m; sourceTree = "<group>"; };
@@ -887,6 +889,7 @@
 			children = (
 				8F6D686E216B5117007CFC0C /* VideoVC.swift */,
 				8F4E16E0216DE0E50023E6A0 /* VideoVC_VideoListVC.swift */,
+				811CCD2E227704D100323F7E /* IJKVideo_PlayVC.swift */,
 				8F4E16E2216DE1640023E6A0 /* VideoVC_VideoNearbyVC.swift */,
 				8F15DC862177430400C80468 /* Video_ActivityListVC.swift */,
 			);
@@ -1333,6 +1336,7 @@
 				8F0C7DFB218A9CF400EEFBA2 /* ZL_PageListController_HeaderBigger.swift in Sources */,
 				8F4E16EA216DF9A30023E6A0 /* UserDetail.swift in Sources */,
 				8F6D6812216B469C007CFC0C /* AppDelegate.swift in Sources */,
+				811CCD2F227704D100323F7E /* IJKVideo_PlayVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
