@@ -203,9 +203,7 @@ extension LiveVC_VideoListVC {
     
     /// 跳转到视频播放
     private func togoPlayVideoVC(indexPath: IndexPath) {
-        
         let news: NewsModel = self.dataArr[indexPath.section] as! NewsModel
-        
         /// 需要解析视频的真实地址
         NetManager.parseVideoRealURL(video_id: news.video_id) { (realVideo: RealVideo) in
             let detailVC: LiveVC_VideoPlayDetailVC = LiveVC_VideoPlayDetailVC()

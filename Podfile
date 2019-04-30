@@ -26,9 +26,11 @@ target 'TadayNew_Swift' do
   
   pod 'SkeletonView'
   
-#  pod 'ZFPlayer', '~> 3.2.1'
-#  pod 'ZFPlayer/ControlView'
-#  pod 'ZFPlayer/AVPlayer', '~> 3.0'
+  pod 'ZFPlayer'
+  pod 'ZFPlayer/ControlView'
+  pod 'ZFPlayer/AVPlayer'
+#  pod 'ZFPlayer/ijkplayer'
+#  pod 'ZFPlayer/KSYMediaPlayer', '~> 3.0'
 
 #  pod 'BMPlayer'
 #  pod 'SQLite.swift'

@@ -23,6 +23,13 @@ PODS:
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
+  - ZFPlayer (3.2.10):
+    - ZFPlayer/Core (= 3.2.10)
+  - ZFPlayer/AVPlayer (3.2.10):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (3.2.10):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (3.2.10)
 
 DEPENDENCIES:
   - FDFullscreenPopGesture
@@ -38,6 +45,9 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
+  - ZFPlayer
+  - ZFPlayer/AVPlayer
+  - ZFPlayer/ControlView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -57,6 +67,7 @@ SPEC REPOS:
     - SnapKit
     - SVProgressHUD
     - SwiftyJSON
+    - ZFPlayer
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -75,7 +86,8 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  ZFPlayer: a51c6ffebaf06b91d373091bb4a62ee188cfc7de
 
-PODFILE CHECKSUM: 7b6a44fba29f30885596887dac2b92380d0eda2a
+PODFILE CHECKSUM: 99f447910d3733bee890a658b2b7d1ee43fb64fc
 
 COCOAPODS: 1.6.1
