@@ -150,7 +150,7 @@ extension WeiTouTiaoVC {
             self.present(vc, animated: false, completion: nil)
         }
         
-        cell.btn_corver.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: {
+        cell.btn_corver.rx.controlEvent(UIControl.Event.touchUpInside).subscribe(onNext: {
             print("=-=-=-=-=-=-=-=-")
         }).disposed(by: disposeBag)
         

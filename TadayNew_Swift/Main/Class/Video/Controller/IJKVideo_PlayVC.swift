@@ -86,7 +86,7 @@ extension IJKVideo_PlayVC {
         //2、初始化播放器，播放在线视频或直播（RTMP）
         //IJKFFMoviePlayerController：专门用来v播放视频
         player = IJKAVMoviePlayerController.init(contentURLString: url)
-        player.view.frame = UIScreen.main.bounds
+        player.view.frame = view.bounds
         player.scalingMode = .aspectFit  //缩放模式
         player.shouldAutoplay = true     //开启自动播放
         
@@ -94,6 +94,7 @@ extension IJKVideo_PlayVC {
         let autoresize = UIView.AutoresizingMask.flexibleWidth.rawValue |
             UIView.AutoresizingMask.flexibleHeight.rawValue
         player.view.autoresizingMask = UIView.AutoresizingMask(rawValue: autoresize)
+        player.scalingMode = .aspectFill
         self.view.autoresizesSubviews = true
         
         player.prepareToPlay()

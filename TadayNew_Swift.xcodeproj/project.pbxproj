@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		811CCD2F227704D100323F7E /* IJKVideo_PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CCD2E227704D100323F7E /* IJKVideo_PlayVC.swift */; };
+		811CCD3C2277F49900323F7E /* ZFTableViewCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CCD382277F49900323F7E /* ZFTableViewCellLayout.m */; };
+		811CCD3D2277F49900323F7E /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CCD3B2277F49900323F7E /* NSString+Size.m */; };
+		811CCD402277F4D700323F7E /* ZFTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CCD3E2277F4D700323F7E /* ZFTableData.m */; };
 		817BA5C82227ECBA00F52B21 /* KSMediaPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 817BA5B62227ECBA00F52B21 /* KSMediaPlayerManager.m */; };
 		817BA5CB2227ECDD00F52B21 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817BA5CA2227ECDD00F52B21 /* IJKMediaFramework.framework */; };
 		8F0C7DF5218A88A400EEFBA2 /* ZL_PageListRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0C7DF4218A88A400EEFBA2 /* ZL_PageListRefreshController.swift */; };
@@ -149,6 +152,12 @@
 		5BFCD50C6CBF7B898A055457 /* Pods_TadayNew_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TadayNew_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3F3C76F4AB8B687E210107 /* Pods-TadayNew_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TadayNew_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TadayNew_Swift/Pods-TadayNew_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		811CCD2E227704D100323F7E /* IJKVideo_PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJKVideo_PlayVC.swift; sourceTree = "<group>"; };
+		811CCD382277F49900323F7E /* ZFTableViewCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableViewCellLayout.m; sourceTree = "<group>"; };
+		811CCD392277F49900323F7E /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		811CCD3A2277F49900323F7E /* ZFTableViewCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableViewCellLayout.h; sourceTree = "<group>"; };
+		811CCD3B2277F49900323F7E /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
+		811CCD3E2277F4D700323F7E /* ZFTableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableData.m; sourceTree = "<group>"; };
+		811CCD3F2277F4D700323F7E /* ZFTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableData.h; sourceTree = "<group>"; };
 		817BA5B62227ECBA00F52B21 /* KSMediaPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSMediaPlayerManager.m; sourceTree = "<group>"; };
 		817BA5B72227ECBA00F52B21 /* KSMediaPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSMediaPlayerManager.h; sourceTree = "<group>"; };
 		817BA5CA2227ECDD00F52B21 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
@@ -345,6 +354,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		811CCD372277F49900323F7E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				811CCD3F2277F4D700323F7E /* ZFTableData.h */,
+				811CCD3E2277F4D700323F7E /* ZFTableData.m */,
+				811CCD3A2277F49900323F7E /* ZFTableViewCellLayout.h */,
+				811CCD382277F49900323F7E /* ZFTableViewCellLayout.m */,
+				811CCD392277F49900323F7E /* NSString+Size.h */,
+				811CCD3B2277F49900323F7E /* NSString+Size.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		817BA58D2227EB2500F52B21 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +423,7 @@
 		817BA5922227ECBA00F52B21 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				811CCD372277F49900323F7E /* Other */,
 				817BA5952227ECBA00F52B21 /* ijkplayer */,
 				817BA5B52227ECBA00F52B21 /* KSYMediaPlayer */,
 			);
@@ -1086,6 +1109,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1108,6 +1132,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -1206,6 +1231,7 @@
 				8F4E16ED216DFA800023E6A0 /* Video.swift in Sources */,
 				8F4E16DF216DD9BD0023E6A0 /* UIScrollView+Refresh.swift in Sources */,
 				8F6D6844216B4C8C007CFC0C /* UtilsMacro.swift in Sources */,
+				811CCD402277F4D700323F7E /* ZFTableData.m in Sources */,
 				8F6D686F216B5117007CFC0C /* VideoVC.swift in Sources */,
 				8F0C7DF9218A9A7A00EEFBA2 /* ZL_PageListMainTableRefresh.swift in Sources */,
 				8F4E16FD216E42510023E6A0 /* Video_VideoCell.swift in Sources */,
@@ -1219,6 +1245,7 @@
 				8FE1AECA21804B0400252D92 /* SGPageTitleView.swift in Sources */,
 				8F4E16E7216DF8840023E6A0 /* Calculate.swift in Sources */,
 				8FE1AEE1218063B400252D92 /* ZL_PagerListHeaderView.swift in Sources */,
+				811CCD3C2277F49900323F7E /* ZFTableViewCellLayout.m in Sources */,
 				8F12B1FF217890580097BC9D /* ZL_EdgeInsetsLabel.swift in Sources */,
 				8FCD7A22217046DE00966DE6 /* IJKLiveVC_Show.swift in Sources */,
 				8F4D1948216F34FC0087DA3A /* LiveModel.swift in Sources */,
@@ -1226,6 +1253,7 @@
 				8F0C7DF5218A88A400EEFBA2 /* ZL_PageListRefreshController.swift in Sources */,
 				8F6D6882216B694B007CFC0C /* ZLSettingCell.swift in Sources */,
 				8F4E16E3216DE1640023E6A0 /* VideoVC_VideoNearbyVC.swift in Sources */,
+				811CCD3D2277F49900323F7E /* NSString+Size.m in Sources */,
 				8F8B7152217639540093356D /* HomeChannelPOPVC.swift in Sources */,
 				8FCD7A3F21707ED700966DE6 /* IJKLive_Show_Navi.swift in Sources */,
 				8F817B7A21725896003D444A /* HomeChannelVC.swift in Sources */,

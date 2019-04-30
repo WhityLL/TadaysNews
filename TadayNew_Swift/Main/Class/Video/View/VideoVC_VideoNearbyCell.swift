@@ -8,8 +8,18 @@
 
 import UIKit
 
-class VideoVC_VideoNearbyCell: UITableViewCell {
+protocol ZL_PlayVideoTableViewCellDelegate: NSObjectProtocol {
+    func zl_playTheVideoAtIndexPath(indexPath: IndexPath)
+}
 
+class VideoVC_VideoNearbyCell: UITableViewCell {
+    
+    weak var delegate: ZL_PlayVideoTableViewCellDelegate?
+    
+    var playCallback: (() -> ())?
+    
+    var indexPath: NSIndexPath?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -50,7 +60,6 @@ class VideoVC_VideoNearbyCell: UITableViewCell {
     
     
     @IBOutlet weak var imgv_pic: UIImageView!
-    
     @IBOutlet weak var btn_play: UIButton!
     @IBOutlet weak var btn_transport: UIButton!
     @IBOutlet weak var btn_comment: UIButton!
@@ -64,6 +73,27 @@ class VideoVC_VideoNearbyCell: UITableViewCell {
     @IBAction func btnLikeClick(_ sender: Any) {
     }
     @IBAction func btnPlayClick(_ sender: Any) {
+        self.playCallback?()
     }
     
+}
+
+extension VideoVC_VideoNearbyCell{
+    func setDelegate(delegate: ZL_PlayVideoTableViewCellDelegate , indexPath : NSIndexPath) {
+        self.delegate = delegate
+        self.indexPath = indexPath;
+    }
+    
+    func showMaskView() {
+        
+    }
+    
+    func hideMaskView() {
+        
+    }
+    
+    func setNormalMode() {
+        
+    }
+
 }

@@ -16,6 +16,8 @@
 #import <ZFPlayer/UIScrollView+ZFPlayer.h>
 #import "UIImageView+ZFCache.h"
 #import "ZFUtilities.h"
+#import "ZFTableData.h"
+#import "ZFTableViewCellLayout.h"
 
 //Paihuo_Swift/TadayNew_Swift-Bridging-Header.h
 #endif /* TadayNew_Swift_Bridging_Header_h */

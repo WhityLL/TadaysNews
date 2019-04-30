@@ -9,10 +9,15 @@
 import UIKit
 
 class VideoVC_VideoNearbyVC: BaseViewController {
+    
+    var player: ZFPlayerController?
+    
     var categary : NewsTitleCategory = .recommend
     
     /// 数据
     var dataArr = [Any]()
+    var urls = [URL]()
+    var dataSource = [ZFTableViewCellLayout]()
     /// 刷新时间
     var maxBehotTime: TimeInterval = Date().timeIntervalSince1970
     /// TTFrom
@@ -39,13 +44,32 @@ class VideoVC_VideoNearbyVC: BaseViewController {
         return tableView
     }()
     
+    private lazy var controlView: ZFPlayerControlView = {
+        let controlView: ZFPlayerControlView = ZFPlayerControlView()
+        controlView.fastViewAnimated = true
+        controlView.horizontalPanShowControlView = false
+        controlView.prepareShowLoading = true
+        return controlView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupRefresh()
         
+        setupPlayer()
     }
     
+    
+    func setupPlayer() {
+        let playerManager = ZFAVPlayerManager()
+        player = ZFPlayerController.init(scrollView: self.tableView, playerManager: playerManager, containerViewTag: 100)
+        player?.controlView = self.controlView
+        player?.assetURLs = self.urls
+        player?.playerDisapperaPercent = 0.8;
+        player?.isWWANAutoPlay = true;
+        
+    }
 }
 
 extension VideoVC_VideoNearbyVC : UITableViewDelegate,UITableViewDataSource {
@@ -63,6 +87,12 @@ extension VideoVC_VideoNearbyVC : UITableViewDelegate,UITableViewDataSource {
         let cell : VideoVC_VideoNearbyCell = tableView.dequeueReusableCell(withIdentifier: "VideoVC_VideoNearbyCell") as! VideoVC_VideoNearbyCell
 
         cell.video = self.dataArr[indexPath.section] as! NewsModel
+        
+        cell.setDelegate(delegate: self, indexPath: indexPath as NSIndexPath)
+        
+        cell.playCallback = {
+            self.play(indexPath: indexPath)
+        }
         
         return cell
     }
@@ -105,8 +135,36 @@ extension VideoVC_VideoNearbyVC : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 }
 
+extension VideoVC_VideoNearbyVC {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollView.zf_scrollViewDidEndDecelerating()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+         scrollView.zf_scrollViewDidEndDraggingWillDecelerate(decelerate)
+    }
+    
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        scrollView.zf_scrollViewDidScrollToTop()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+         scrollView.zf_scrollViewDidScroll()
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+         scrollView.zf_scrollViewWillBeginDragging()
+    }
+    
+}
 
 extension VideoVC_VideoNearbyVC {
     
@@ -137,6 +195,8 @@ extension VideoVC_VideoNearbyVC {
             
             self.dataArr.append(contentsOf: aNewsModelList)
             
+            self.formatUrls()
+            
             self.listCount = self.dataArr.count > 0 ? self.dataArr.count : 20
             
             self.tableView.reloadData()
@@ -148,4 +208,41 @@ extension VideoVC_VideoNearbyVC {
         
     }
     
+    func formatUrls() {
+        for item in self.dataArr {
+            let videoModel = item as! NewsModel
+            let url = videoModel.raw_data.first_frame_image_list.first!.urlString
+            
+            let tableData = ZFTableData.init();
+            let layout = ZFTableViewCellLayout.init(data: tableData)
+            dataSource.append(layout!)
+            urls.append(URL.init(string: url)!)
+        }
+    }
+    
+    func playTheVideoAtIndexPath(indexPath: IndexPath , scrollToTop: Bool) {
+        self.player?.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
+        let layout = self.dataSource[indexPath.row]
+        
+        controlView.showTitle(layout.data.title, coverURLString:layout.data.thumbnail_url, fullScreenMode: ZFFullScreenMode(rawValue: 0)!)
+    }
+    
+    
+    func play(indexPath: IndexPath) {
+        if player?.playingIndexPath == indexPath {
+            player?.stopCurrentPlayingCell()
+        }
+        
+        if !(player?.currentPlayerManager.isPlaying)! {
+            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+        }
+        
+    }
+    
+}
+
+extension VideoVC_VideoNearbyVC : ZL_PlayVideoTableViewCellDelegate{
+    func zl_playTheVideoAtIndexPath(indexPath: IndexPath) {
+        self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+    }
 }
