@@ -15,6 +15,7 @@ class LoginVC: BaseViewController {
         // 登录页面
         self.title = "登录"
         // commit 1
+        // commit 2
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
