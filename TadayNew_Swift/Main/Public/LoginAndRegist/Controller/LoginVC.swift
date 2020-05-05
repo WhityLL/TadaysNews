@@ -12,7 +12,9 @@ class LoginVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 登录页面
         self.title = "登录"
+        
         // Do any additional setup after loading the view.
     }
     

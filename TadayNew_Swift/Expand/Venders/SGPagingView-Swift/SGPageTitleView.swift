@@ -517,8 +517,10 @@ extension SGPageTitleView {
             targetBtnMaxX = targetBtn.frame.maxX
             originalBtnMaxX = originalBtn.frame.maxX
         }
-        let targetIndicatorX = targetBtnMaxX - targetBtnTextWidth - 0.5 * (btnWidth - targetBtnTextWidth + configure.indicatorAdditionalWidth)
-        let originalIndicatorX = originalBtnMaxX - originalBtnTextWidth - 0.5 * (btnWidth - originalBtnTextWidth + configure.indicatorAdditionalWidth)
+        let tempTargetIndicatorX = 0.5 * (btnWidth - targetBtnTextWidth + configure.indicatorAdditionalWidth)
+        let targetIndicatorX = targetBtnMaxX - targetBtnTextWidth - tempTargetIndicatorX
+        let tempOriginalIndicatorX = 0.5 * (btnWidth - originalBtnTextWidth + configure.indicatorAdditionalWidth)
+        let originalIndicatorX = originalBtnMaxX - originalBtnTextWidth - tempOriginalIndicatorX
         let totalOffsetX = targetIndicatorX - originalIndicatorX
         
         /// 2、计算文字之间差值
@@ -713,7 +715,8 @@ extension SGPageTitleView {
             indicator.frame.origin.x = originalBtn.frame.origin.x + offsetX
             indicator.frame.size.width = originalBtn.frame.size.width + distance
         } else {
-            offsetX = totalOffsetX * progress + 0.5 * configure.titleAdditionalWidth - 0.5 * configure.indicatorAdditionalWidth
+            let tempW = 0.5 * configure.titleAdditionalWidth - 0.5 * configure.indicatorAdditionalWidth
+            offsetX = totalOffsetX * progress + tempW
             distance = progress * (totalDistance - totalOffsetX) - configure.titleAdditionalWidth
             /// 计算 indicator 新的 frame
             indicator.frame.origin.x = originalBtn.frame.origin.x + offsetX
