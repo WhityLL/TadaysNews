@@ -14,7 +14,8 @@ class LoginVC: BaseViewController {
         super.viewDidLoad()
         // 登录页面
         self.title = "登录"
-        //。修改记录1 
+        //。修改记录1
+        //。修改2
         // Do any additional setup after loading the view.
     }
     
