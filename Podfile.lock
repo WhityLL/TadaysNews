@@ -53,7 +53,7 @@ DEPENDENCIES:
   - ZFPlayer/ControlView
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - FDFullscreenPopGesture
     - HandyJSON
@@ -95,4 +95,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 99f447910d3733bee890a658b2b7d1ee43fb64fc
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.1
